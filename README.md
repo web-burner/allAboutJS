@@ -1,4 +1,5 @@
 All about JS
+module-13(variable)
 1. variable 
 2. way to declare variable 
 3. update value of variable
@@ -17,3 +18,6 @@ All about JS
 16. shorthand of arithmetic operation; 
 17. isNaN
 18. undefined
+
+module-14(conditionals)
+19
