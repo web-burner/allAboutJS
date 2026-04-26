@@ -18,6 +18,24 @@ module-13(variable)
 16. shorthand of arithmetic operation; 
 17. isNaN
 18. undefined
+19. Null
+20. Number
 
 module-14(conditionals)
-19
+21. greater then (>)
+22. less than (<)
+23. equal (=)
+24. greater than or equal (>=)
+25. less than or equal (<=)
+26. not equal (!=)
+27. AND (&&)
+28. OR (||)
+29. NOT (!)
+30. if/else statement 
+31. nested if/else
+32. AND
+33. OR
+34. if/else if/else
+35. nested if/else 
+36. ternary Operator 
+37. logical NOT(!)
