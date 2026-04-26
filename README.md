@@ -39,3 +39,10 @@ module-14(conditionals)
 35. nested if/else 
 36. ternary Operator 
 37. logical NOT(!)
+
+
+Module-15
+38. for of loop
+39. while loop
+40. increment (++)
+41. infinite loop
