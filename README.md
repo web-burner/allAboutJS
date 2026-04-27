@@ -46,3 +46,7 @@ Module-15
 39. while loop
 40. increment (++)
 41. infinite loop
+42. even number 
+43. odd number 
+44. sum 
+45. for loop
