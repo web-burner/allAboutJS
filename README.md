@@ -50,3 +50,9 @@ Module-15
 43. odd number 
 44. sum 
 45. for loop
+46. even/odd numbers using loop
+47. divisible numbers using loop
+48. sum using loop
+49. break(stop immediately)
+50. continue(skip this iteration)
+51. do while loop (run at least once)
