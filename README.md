@@ -1,5 +1,5 @@
 All about JS
-module-13(variable)
+<!-- module-13(variable) -->
 1. variable 
 2. way to declare variable 
 3. update value of variable
@@ -21,7 +21,7 @@ module-13(variable)
 19. Null
 20. Number
 
-module-14(conditionals)
+<!-- module-14(conditionals) -->
 21. greater then (>)
 22. less than (<)
 23. equal (=)
@@ -41,7 +41,7 @@ module-14(conditionals)
 37. logical NOT(!)
 
 
-Module-15
+<!-- Module-15(Array and array method) -->
 38. for of loop
 39. while loop
 40. increment (++)
@@ -74,3 +74,12 @@ module-15.5(Array)
 65. concat
 66. slice
 67. splice
+
+<!-- module-16(String and Object) -->
+
+68. string length
+69. string element access 
+70. toLowerCase
+71. toUpperCase
+72. trim
+73. string immutable ?
