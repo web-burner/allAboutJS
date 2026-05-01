@@ -56,3 +56,21 @@ Module-15
 49. break(stop immediately)
 50. continue(skip this iteration)
 51. do while loop (run at least once)
+
+module-15.5(Array)
+52. array length
+53. array index(start from 0)
+54. array index access arrayName[indexNumber]
+55. set or update value of array by index
+56. push (add element in the last)
+57. pop (remove the last element)
+58. shift (remove the first element)
+59. unshift (add element as first element)
+60. array method
+61. includes 
+62. indexOf
+63. isArray
+64. join
+65. concat
+66. slice
+67. splice
