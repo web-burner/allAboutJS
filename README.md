@@ -83,3 +83,12 @@ module-15.5(Array)
 71. toUpperCase
 72. trim
 73. string immutable ?
+74. slice 
+75. split 
+76. join
+77. concat 
+78. includes 
+79. reverse 
+80. object 
+81. properties and value
+82. primitive and non-primitive
