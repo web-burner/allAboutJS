@@ -1,4 +1,5 @@
 All about JS
+<!-- milestone-3 -->
 <!-- module-13(variable) -->
 1. variable 
 2. way to declare variable 
@@ -92,3 +93,16 @@ module-15.5(Array)
 80. object 
 81. properties and value
 82. primitive and non-primitive
+83. dot notation 
+84. bracket notation
+85. set properties 
+86. update properties 
+87. keys 
+88. values 
+89. nested object 
+90. delete
+91. Loop an object (for in loop)
+92. direct object declare 
+93. use new keyword to declare object 
+94. use Object.create to declare object 
+95. 
