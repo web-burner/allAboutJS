@@ -105,4 +105,20 @@ module-15.5(Array)
 92. direct object declare 
 93. use new keyword to declare object 
 94. use Object.create to declare object 
-95. 
+<!-- milestone - 4 -->
+<!-- module - 18 traverse array using for , while and for of loop-->
+
+95. loop in array(for of loop) 
+96. reverse an array using unshift array method
+97. reverse keyword 
+98. sort method 
+99. ascending and descending order 
+100. array of object 
+101. access an object form array 
+102. 2D array (array of array)
+103. access an array from 2D array
+104. copy an array from another array
+105. copy an array using Array.from()
+106. copy an array using concat method
+107. copy an array using spread operator 
+
