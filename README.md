@@ -122,3 +122,17 @@ module-15.5(Array)
 106. copy an array using concat method
 107. copy an array using spread operator 
 
+module-19(Fundamentals of functions)
+
+108. what is function ?
+109. how to declare function ?
+110. function parameter
+111. handle multiple parameters 
+112. how to pass arguments in function?
+113. arguments vs parameter 
+114. function return 
+115. set return value to a variable 
+116. conditional return of odd and even 
+117. different types of variable 
+118. sum of all numbers in an array using function 
+119. Return All The Even Numbers Of An Array
