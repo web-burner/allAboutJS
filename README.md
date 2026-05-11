@@ -136,4 +136,26 @@ module-19(Fundamentals of functions)
 117. different types of parameter 
 118. sum of all numbers in an array using function 
 119. Return All The Even Numbers Of An Array
-120. 
+
+module - 20 (problem solving part 1)
+120. convert inch to feet 
+121. convert miles to kilometers 
+122. leap years 
+123. average of obd numbers 
+124. remove duplicates from array 
+125. math 
+126. abs 
+127. round 
+128. ceil
+129. floor 
+130. random 
+131. min number
+132. max number 
+133. date and time 
+134. today , specific date ,\
+135. get and set day/date/month/year
+136. get time 
+137. toLocaleDateString
+138. toLocaleTimeString
+139. toLocaleString
+140. swap variable , destructing 
