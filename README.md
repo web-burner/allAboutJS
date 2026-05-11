@@ -133,6 +133,7 @@ module-19(Fundamentals of functions)
 114. function return 
 115. set return value to a variable 
 116. conditional return of odd and even 
-117. different types of variable 
+117. different types of parameter 
 118. sum of all numbers in an array using function 
 119. Return All The Even Numbers Of An Array
+120. 
