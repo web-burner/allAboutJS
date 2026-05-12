@@ -159,3 +159,15 @@ module - 20 (problem solving part 1)
 138. toLocaleTimeString
 139. toLocaleString
 140. swap variable , destructing 
+
+
+module - 21 (problem solving part 2)
+
+141. find out who got highest marks 
+142. find out max number from array
+143. use add and multiplication to calculate wood 
+144. find a cheapest phone from an array of object 
+145. Calculate The Total Cost Of The Products In A Shopping Cart
+146. Multi-Layer Discount Price Calculation
+147. simple Calculator To Call Function Inside A Function
+148. Handle Unexpected Function Input Parameter Error (check the type of parameter is it valid)
