@@ -171,3 +171,11 @@ module - 21 (problem solving part 2)
 146. Multi-Layer Discount Price Calculation
 147. simple Calculator To Call Function Inside A Function
 148. Handle Unexpected Function Input Parameter Error (check the type of parameter is it valid)
+
+module - 22.5 (bonus module)
+149. nested object 
+150. object value can be array , object or function 
+151. arguments and can access all arguments from inside function and it will return array like object
+152. find the matching product by searching 
+
+
