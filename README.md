@@ -144,7 +144,7 @@ module - 22.5 (bonus module) 149. nested object 150. object value can be array ,
 
 module - 23 (Recap - web design , tailwind and responsive)
 
-module - 24 (Tour of DOM)
+<!-- module - 24 (Tour of DOM) -->
 
 153. link html file to css by link tag (external css)
 154. to connect js file to html use script tag and inside the tag use src to link the js file
@@ -170,3 +170,62 @@ module - 24 (Tour of DOM)
 174. childNodes 
 175. createElement
 176. appendChild/append
+
+<!-- module 25 (Event) -->
+
+177. what is event ?
+178. different types of event 
+179. inline event 
+180. addEventListener("event type, handlerFunction)
+181. onclick()
+182. element.onclick = function
+183. element.onclick = functionName
+184. getElementById and set addEventListener
+185. mouseEvent / keyboard Event / form event 
+186. event.target
+187. event.key 
+188. event.type
+189. named function 
+190. anonymous function 
+191. callback function 
+192. value from input 
+193. create a comment box and display comment 
+194. github like delete confirmation button 
+195. mouseenter 
+196. mousemove 
+197. mouseout 
+198. focus 
+199. blur
+200. keydown 
+201. keyup
+202. event bubble 
+203. event object 
+204. stop propagating 
+205. stop immediate propagating 
+206. event delegate 
+207. tagName
+208. removeChild
+
+
+<!-- module - 26 -->
+209. connect tailwind css to html file 
+210. connect daisyui to html file 
+211. login form using tailwindcss and daisyui
+212. design logging form and addEventListener 
+213. connect js folder to html file 
+214. login button functionality 
+215. type = 'button'
+216. e.preventDefault()
+217. conditional check mobile number and pin 
+218. window.location.href="file location"
+219. navbar style 
+220. e.target.tagName
+221. e.target.className
+222. e.target.id
+223. closest 
+224. navigator 
+225. clipboard 
+226. writeText()
+227. .then() . catch
+228. isArray
+229. isNaN
