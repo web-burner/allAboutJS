@@ -229,3 +229,71 @@ module - 23 (Recap - web design , tailwind and responsive)
 227. .then() . catch
 228. isArray
 229. isNaN
+
+
+milestone - 6 (ES6)
+230. const 
+231. let 
+232. var 
+233. array and object declare by const
+234. default parameter (=)
+235. template string 
+236. \n
+237. ${dynamic variable}
+238. Arrow function 
+239. multiple parameters 
+240. arrow functions body (=>)
+241. function declaration 
+242. function expression 
+243. anonymous arrow function 
+244. implicit return 
+245. no this in arrow 
+246. no arguments in arrow 
+247. spread operator 
+248. array max 
+249. copy array 
+250. spread array on function call
+251. copy object 
+252. array and object destructuring
+253. object destructuring follow key name
+254. array destructuring follow index 
+255. alias (oldName:newName)
+256. keys 
+257. values 
+258. entries 
+259. delete 
+260. seal
+261. freeze
+262. access value from object 
+263. dot notation / bracket notation
+264. optional chaining(?)
+265. map / filter / find / forEach / reduce
+267. class 
+268. constructor 
+269. class properties 
+270. class method 
+271. this keyword 
+272. instanceof 
+273. inheritance 
+274. prototyped inheritance 
+275. extends
+276. super(props name)
+277. encapsulation 
+278. data types 
+279. primitive 
+280. non-primitive
+281. immutable 
+282. mutable 
+283. different way to get null and undefined 
+284. truthy falsy 
+285. double equal (==)
+286. triple equal (===)
+287. implicit conversion
+288. block and global scope 
+289. hoisting 
+290. temporal dead zone 
+291. call back function
+292. pass by value and pass by reference
+293. arguments keyword 
+294. closure
+295. increment and decrement (++,--)
