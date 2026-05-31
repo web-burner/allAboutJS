@@ -297,3 +297,29 @@ milestone - 6 (ES6)
 293. arguments keyword 
 294. closure
 295. increment and decrement (++,--)
+296. what is internet?
+297. how internet works?
+298. What is IP address?
+299. what IPv4 and IPv6?
+300. what is DNS?
+301. how DNS works ?
+302. what is HTTP?
+303. how HTTP layer works?
+304. what is HTTPS? 
+305. what is JSON? 
+306. JSON.stringify()
+307. JSON.parse()
+308. load json data using fetch function 
+309. showData by click button 
+310. load and display post title list in the ui
+311. display card and style using css 
+312. display toDo list and simple conditional rendering 
+313. GET 
+314. POST 
+315. PUT 
+316. PATCH
+317. DELETE
+318. status code [200,301,302,404,500,503] 
+319. async await 
+320. synchronous 
+321. asynchronous 
