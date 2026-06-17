@@ -231,7 +231,8 @@ module - 23 (Recap - web design , tailwind and responsive)
 229. isNaN
 
 
-milestone - 6 (ES6)
+<!-- milestone - 6 (ES6) -->
+
 230. const 
 231. let 
 232. var 
@@ -324,4 +325,68 @@ milestone - 6 (ES6)
 320. synchronous 
 321. asynchronous 
 322. modal 
-323. utterance 
+323. utterance (speak)
+
+324. what is js ?
+325. high abstraction
+326. garbage collection 
+327. JIT compiled (just in time compiled)
+328. call stack memory 
+329. multi paradigm 
+330. proto-typed based
+331. dynamically typed 
+332. V8 Engine 
+333. execution context (global and function)
+334. call stack
+335. single threaded(synchronous) (possible to use asynchronous)
+336. setTimeOut/clearTimeOut(parameter,parameter for time) it will run one time after the time but if compiler free . it return an id
+337. promise and promise all 
+338. promise(pending, resolve , reject) 
+339. asynchronous / await (like wait for this until it finished it used for prevent asynchronous behavior and do the work synchronous way)
+340. try/catch
+341. promise hell
+342. setInterval(it will do the work after the time finished every time ) / clearInterval (it returns an id)
+343. event loop and concurrency 
+344. event queue
+
+345. local storage (get and set)
+346. setItem 
+347. getItem
+348. removeItem 
+349. json.stringify (to set an object to ls)
+350. set and get object to local storage 
+351. json.parse (to get an object from ls)
+
+<!-- Milestone - 7 (React Core Concept) -->
+352. what is react?
+353. what is component?
+354. first letter is capital must for component
+355. JSX markup 
+356. what is xml?
+357. jsx rule
+358. fragment
+359. camelCase for attribute name
+360. carly brace for dynamic variable 
+361. use bracket to return something
+362. style in jsx
+363. set parameter 
+364. what is props 
+365. how to read a props 
+366. destructuring 
+367. read only props and conditional rendering 
+368. 6 way to conditional rendering 
+369. map method 
+370. return a component using map method 
+371. pass a value inside component using map method
+372. vite config (for plugin react)
+373. package.json (for different version handle )
+374. index.html (this is the main html file or starting point)
+375. eslint (this is for observe the file where have syntax error or unuse thing to give warning)
+376. src folder (it is for all site source of the project)
+377. event handle  
+378. useState() {to handle state}
+379. suspense
+380. fallback
+381. use() hook {to fetch data}
+382. async await for return promise
+383. useEffect 
