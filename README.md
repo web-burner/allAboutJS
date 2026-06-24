@@ -61,7 +61,23 @@ All about JS
 50. continue(skip this iteration)
 51. do while loop (run at least once)
 
-module-15.5(Array) 52. array length 53. array index(start from 0) 54. array index access arrayName[indexNumber] 55. set or update value of array by index 56. push (add element in the last) 57. pop (remove the last element) 58. shift (remove the first element) 59. unshift (add element as first element) 60. array method 61. includes 62. indexOf 63. isArray 64. join 65. concat 66. slice 67. splice
+module-15.5(Array) 
+52. array length 
+53. array index(start from 0) 
+54. array index access arrayName[indexNumber] 
+55. set or update value of array by index 
+56. push (add element in the last) 
+57. pop (remove the last element) 
+58. shift (remove the first element) 
+59. unshift (add element as first element) 
+60. array method 
+61. includes 
+62. indexOf 
+63. isArray 
+64. join 
+65. concat 
+66. slice 
+67. splice
 
 <!-- module-16(String and Object) -->
 
@@ -124,8 +140,28 @@ module-19(Fundamentals of functions)
 118. sum of all numbers in an array using function
 119. Return All The Even Numbers Of An Array
 
-module - 20 (problem solving part 1) 120. convert inch to feet 121. convert miles to kilometers 122. leap years 123. average of obd numbers 124. remove duplicates from array 125. math 126. abs 127. round 128. ceil 129. floor 130. random 131. min number 132. max number 133. date and time 134. today , specific date ,\
-135. get and set day/date/month/year 136. get time 137. toLocaleDateString 138. toLocaleTimeString 139. toLocaleString 140. swap variable , destructing
+module - 20 (problem solving part 1) 
+120. convert inch to feet 
+121. convert miles to kilometers 
+122. leap years 
+123. average of obd numbers 
+124. remove duplicates from array 
+125. math 
+126. abs 
+127. round 
+128. ceil 
+129. floor 
+130. random 
+131. min number 
+132. max number 
+133. date and time 
+134. today , specific date ,\
+135. get and set day/date/month/year 
+136. get time 
+137. toLocaleDateString 
+138. toLocaleTimeString 
+139. toLocaleString 
+140. swap variable , destructing
 
 module - 21 (problem solving part 2)
 
@@ -138,7 +174,11 @@ module - 21 (problem solving part 2)
 147. simple Calculator To Call Function Inside A Function
 148. Handle Unexpected Function Input Parameter Error (check the type of parameter is it valid)
 
-module - 22.5 (bonus module) 149. nested object 150. object value can be array , object or function 151. arguments and can access all arguments from inside function and it will return array like object 152. find the matching product by searching
+module - 22.5 (bonus module) 
+149. nested object 
+150. object value can be array , object or function 
+151. arguments and can access all arguments from inside function and it will return array like object 
+152. find the matching product by searching
 
     <!-- milestone - 5 Interactive Javascript and DOM -->
 
@@ -389,4 +429,277 @@ module - 23 (Recap - web design , tailwind and responsive)
 380. fallback
 381. use() hook {to fetch data}
 382. async await for return promise
-383. useEffect 
+383. what is useEffect?
+384. lift up the state
+385. uni-directional (one way data binding)
+386. state and handler declare together in same component 
+387. for array and object have to use spread operator to copy the current state as new variable then set the new variable as state value .
+388. npm run build for deploy the project 
+
+389. ES6 Modules (export/import)
+390. alias using as (var name as newName)
+391. relative path(../folder path)
+392. create and load fake json data
+393. to create fake json data , have to create dataName.json file to put all these data into public folder 
+394. to use the json data use the path line like (./data.json)
+395. load fake data , online api(in github create a repo and in the repo create file paste the data)
+396. Load Bottles Data And Show In Grid Layout
+397. show saved data to multiple device using database 
+398. show data only browser using local storage 
+399. store data in local storage in React 
+400. local storage return null if there is no data exist by the name searching for .
+401. store object id instead of storing full object 
+402. Introduction To Local Storage: Storing Data In The Browser
+403. Use Effect Dependency And Load Stored Id
+
+<!-- milestone-7 (React Core Concept) -->
+<!-- JavaScript fundamentals need to know for react  -->
+352. variable (let , const)
+353. if/else statement 
+354. multiple condition using logical operator (&&,||)
+355. array 
+356. array properties (length, trim)
+357. access element form array using index 
+358. array method (pop,push,shift,unshift,slice,splice,toUpperCase,toLowerCase,includes,map,forEach,filter,find,reduce,)
+359. loop (for,for in , for of , while , do while)
+360. function and return value 
+361. function arguments 
+362. object and access value form object 
+363. update key value in object 
+364. template string 
+365. arrow function 
+366. rest operator in arrow function (...)
+367. spread operator 
+368. destructuring (array[] and object{})
+369. JSON (stringify,parse)
+370. fetch
+371. keys and values of object 
+372. array add and remove using dots [...]
+373. truthy and falsy
+374. ternary operator and shortcut AND , OR
+375. local storage and session storage 
+376. dot and bracket notation
+
+<!-- Module 36 React Core Concept part-1 -->
+
+377. what is React ? 
+=> React is a component based javascript library
+=> it control virtual dom
+
+378. how to create a react project ? 
+    => select the folder where the project will be create
+    => npm create vite@latest 
+    => project name 
+    => choose react 
+    => choose javascript 
+    => yes 
+    => to open (cmd + click)
+    => project info in package.json file 
+
+379. what is component ? 
+    => component is UI building block 
+    => it is return jsx 
+
+380. component types 
+381. syntax of component 
+    => component name should be start with upperCase 
+    => have to export if want to use if other component . 
+    => from a single jsx file can export only one default component 
+
+
+    const Component = () => {
+        return (
+            <div>
+
+            </div>
+        );
+    };
+
+    export default Component;
+
+382. what is jsx ? 
+    => jsx is a syntax extension for javascript 
+    => jsx is stand for javascript xml .
+    => html like markup inside a javascript file.
+    => browser cannot read jsx . it can read only html, css and js 
+
+383. rules of jsx?
+    => return a single root element 
+    => use a <div> or fragment <>
+    => all the tags must have to close
+    => use camelCase for attribute 
+
+384. add dynamic content to jsx.
+    => use {} curly braces to something inside html 
+
+385. style a element using variable 
+    => the variable have to be an object or use class
+    => cause jsx can not read style attribute 
+
+    const Component = () => {
+      const comStyle = { border: "2px solid red" };
+      return <div style={comStyle}></div>;
+    };
+
+    export default Component;
+
+386. what are props ?
+    => send parameter like an attribute 
+    => receive as props (props is an object)
+    => or receive as any name but have to destructure 
+
+    function App() {
+      return (
+        <>
+          <Player name="Shaon"></Player>
+          <Player name="Sajjat"></Player>
+        </>
+      );
+    }
+
+    const Player = (props) => {
+      return <p>name: {props.name}</p>;
+    };
+
+    export default App;
+
+387. Prop Types And How To Pass/Read A Prop
+    => props is an object 
+    => pass a props like an attribute 
+    => read it like parameter as props or destructure
+    => can use a default parameter when destructure 
+
+    function App() {
+      return (
+        <>
+          <Player name="Shaon" game="Football"></Player>
+          <Player name="Sajjat" game="Football"></Player>
+        </>
+      );
+    }
+
+    const Player = ({ name, game }) => {
+      return (
+        <>
+          <p>name: {name}</p>
+          <p>name: {game}</p>
+        </>
+      );
+    };
+
+388. Read Only Props Two Ways Of Conditional Rendering
+    => export to access the element from another file 
+    => import to access the element exported from another file 
+    => props are read only cannot modify (immutable)
+    => 2 way of conditional rendering (if/else and ternary operator with logical operator)
+
+389. Six Ways To Do Conditional Rendering: If, Ternary And AND OR
+    => if statement 
+    => if/else statement 
+    => ternary operator 
+    => AND (&&)
+    => OR (||)
+    => use variable (if condition is matched the value set to the variable)
+
+390. Rendering Lists Of Users Using Map
+     => use map method in array
+     => every time will get an element
+     => then the element pass to a component
+     => destructure from the component and use
+     => when i will use map method react will ask key for each element as id , i have to pass the id of element as key
+
+
+    function App() {
+        const players = ["Sakib", "Tamim", "Mushfiq", "Mahmudullah", "Mashrafi"];
+
+        return (<>
+        {players.map((player, ind) => (
+        <Players key={ind} player={player}></Players>
+        ))}</>);
+    }
+
+<!-- Module 37: React Core Concept (part 2) -->
+
+391. vite.config.js 
+=> it is use for plugins like [react,tailwindcss etc.]
+
+392. package.json 
+=> here i can get the version , what modules i am using and some useful tools 
+
+393. eslint 
+=> it is using to check unused variable or give warning to do any syntax mistake 
+
+394. app.jsx 
+    => main component of project 
+
+395. Different Ways To Handle Events In React
+    => declare a function inside the component where state will update
+    => then pass the function inside button on onClick attribute (onClick={eventFunction}) without calling the function 
+    => but if i have to pass an arguments then i have to wrap the event function with another callback function then can pass the arguments otherwise the compiler will automatic call the event function 
+
+        function App() {
+          const handleEvent = (name) => {
+            console.log("Hello " + name);
+          };
+          return (
+            <>
+              <button
+                style={{ border: "1px solid tomato", padding: "10px" }}
+                onClick={() => handleEvent("Shaon")}
+              >
+                Event Button
+              </button>
+            </>
+          );
+        };
+
+396. useState 
+    => useState is used for update the state 
+    => it returns an array with 2 value [initial value and setter function]
+    => default value depends on the value will be set
+
+    function App() {
+      const [count, setCount] = useState(0);
+      const handleEvent = (name) => {
+        console.log("Hello " + name);
+        const newCount = count + 1;
+        setCount(newCount);
+      };
+      return (
+        <>
+          <button
+            style={{ border: "1px solid tomato", padding: "10px" }}
+            onClick={() => handleEvent("Shaon")}
+          >
+            Event {count}
+          </button>
+        </>
+      );
+    }
+
+397. Suspense 
+    => it is used to show something when data is loading and it is keep showing until data is loaded 
+    <Suspense fallback={<h2>Players Detail is loading...</h2>}>
+        <Players userPromise={userPromise}></Players>
+    </Suspense>
+
+398. fallback 
+    => it is used for the element which will show to user when data is loading until data loading finished 
+     <Suspense fallback={<h2>Players Detail is loading...</h2>}>
+            <Players userPromise={userPromise}></Players>
+    </Suspense>
+
+399. use hooks 
+    => it is use to receive the response and the response convert to data 
+    => 
+    const Players = ({ userPromise }) => {
+      const player = use(userPromise);
+      console.log(player)
+      return (
+        <div>
+          <p>{player.length}</p>
+        </div>
+      );
+    };
+
+400. 
