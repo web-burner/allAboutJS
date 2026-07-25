@@ -1026,5 +1026,72 @@ module - 23 (Recap - web design , tailwind and responsive)
 
 427. useRoutes() this the alternative of createBrowserRouter [recommended createBrowserRouter]
 
-428. 
+428. onSubmit to submit form data 
+429. use preventDefault to prevent default behavior 
+430. e.target.inputName.value to access the value 
+431. form with action attribute [it will use when need server side data rendering]
+432. required attribute in input field [without required attribute can prevent Default behavior but form will submit ]
+433. formData [to get data from form]
+434. get data form formData [formData.get('inputName')]
+434.5 controlled field [here when i type the it will show the output instant] here check the condition and show some result instant on ui
 
+uncontrolled field 
+435. useRef()
+<form onSubmit={handleSubmit}>
+        <input type="text" name="name" placeholder="Name" />
+        <br />
+        <input ref={emailRef} type="email" name="email" placeholder="Email" /> <br />
+        <input type="password" name="password" placeholder="Password" /><br />
+        <input type="submit" value="Submit" />
+      </form>
+
+      const emailRef = useRef('')
+      const handleSubmit = (e)=>{
+        e.preventDefault()
+        console.log(emailRef.current.value)
+      }
+
+436. Use Custom Hook To Reduce Duplication Of The Code
+    import { useState } from "react";
+
+    const useInputField = (defaultValue) => {
+      const [value, setValue] = useState(defaultValue);
+      const handleValue = (e) => {
+        setValue(e.target.value);
+      };
+      return [value, handleValue];
+    };
+
+    export default useInputField;
+
+    const handleSubmit = (e) => {
+      e.preventDefault();
+      console.log(email);
+    };
+    
+    <form onSubmit={handleSubmit}>
+        <input
+          type="email"
+          onChange={setEmail}
+          name="email"
+          placeholder="Your Email"
+        />
+        <br />
+        <input type="password" name="password" placeholder="Your Password" />
+        <br />
+        <input type="submit" value="Submit" />
+      </form>
+    const [email, setEmail] = useInputField("");
+    
+437. Create Product Form And Collect Product Data
+438. Display form data in a table and form error handle
+
+439. family tree [props drilling]
+440. context api
+441. context api provider 
+442. Virtual DOM vs Actual DOM
+443. render vs re-render
+444. reactivity 
+445. server side rendering 
+446. client side rendering
+447. 
