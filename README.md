@@ -61,7 +61,23 @@ All about JS
 50. continue(skip this iteration)
 51. do while loop (run at least once)
 
-module-15.5(Array) 52. array length 53. array index(start from 0) 54. array index access arrayName[indexNumber] 55. set or update value of array by index 56. push (add element in the last) 57. pop (remove the last element) 58. shift (remove the first element) 59. unshift (add element as first element) 60. array method 61. includes 62. indexOf 63. isArray 64. join 65. concat 66. slice 67. splice
+module-15.5(Array) 
+52. array length 
+53. array index(start from 0) 
+54. array index access arrayName[indexNumber] 
+55. set or update value of array by index 
+56. push (add element in the last) 
+57. pop (remove the last element) 
+58. shift (remove the first element) 
+59. unshift (add element as first element) 
+60. array method 
+61. includes 
+62. indexOf 
+63. isArray 
+64. join 
+65. concat 
+66. slice 
+67. splice
 
 <!-- module-16(String and Object) -->
 
@@ -109,7 +125,7 @@ module-15.5(Array) 52. array length 53. array index(start from 0) 54. array inde
 106.  copy an array using concat method
 107.  copy an array using spread operator
 
-module-19(Fundamentals of functions)
+<!-- module-19(Fundamentals of functions) -->
 
 108. what is function ?
 109. how to declare function ?
@@ -124,7 +140,7 @@ module-19(Fundamentals of functions)
 118. sum of all numbers in an array using function
 119. Return All The Even Numbers Of An Array
 
-module - 20 (problem solving part 1) 120. convert inch to feet 121. convert miles to kilometers 
+<!-- module - 20 (problem solving part 1) 120. convert inch to feet 121. convert miles to kilometers  -->
 122. leap years 
 123. average of obd numbers 
 124. remove duplicates from array 
@@ -786,312 +802,516 @@ module - 23 (Recap - web design , tailwind and responsive)
 
 408. imgbb to upload image and get an direct link to use in json file.
 
-409. full setup for project
-410. install react
-411. set project name
-412. install tailwindcss [set plugin and import in app.css file]
-413. set font [import the font in app.css file and make a class to use the font]
-414. install daisyui
-415. install lucide icons [to use import from lucide and use like component]
-416. create a json data for project
-417. install recharts [this is use for make chart in react and data will be simple data not nested data ]
-418. install axios api [this is use to fetch data but little different from normal fetch , here no need to use .then(res=>res.json()) just do axios.get(the api url)]
-419. process data
-420. awesome react components
 
-<!-- react router  -->
+<!-- Milestone - 8 (React Router) -->
 
-410. what is SPA? [Single Page Application]
-411. what is MPA? [Multiple Page Application]
-412. react router install [npm i react-router]
-413. import createBrowserRouter and routerProvider form react-router
-414. create a router and the router can send like props inside routerProvider
-     import { createBrowserRouter } from "react-router";
-     import { RouterProvider } from "react-router/dom";
+<!-- module - 42 (Tailwind CSS, Axios, Rechart, Awesome components) -->
+<!-- c-1 : setup daisyui and tailwind with react -->
+409. install tailwind css [npm i tailwindcss @tailwindcss/vite]
+410. plugin[tailwindcss()] in vite.config
+411. import tailwindcss in app.css 
+412. import font from google 
+413. install daisyui [plugin in app.css]
+
+<!-- c-3 start a custom navigation and install lucide icons -->
+414. install lucide react [npm i lucide-react] / install react icon
+415. create a custom navigation bar
+
+<!-- c-3 dynamic menu button toggle and menu toggle  -->
+416. use a boolean useState to toggle the menu icon
+417. use a (!) not sign to toggle the value when button clicked
+
+<!-- c-4 toggle menu item and create pricing options -->
+418. create a toggle and menu will visible when button clicked
+419. create pricing card using fake data 
+420. set a loader 
+
+<!-- c-5 display pricing cart using daisy ui and fake data  -->
+421. display pricing cart 
+
+<!-- c-7 charts  -->
+
+422. install recharts [npm i recharts]
+423. choose charts style 
+424. set the data as variable data inside the charts style component 
+425. import line and and set the properties as dataKey [direct properties name]
+426. set XAxis and YAxis as dataKey 
+
+<!-- c-8 Axios for data processing  -->
+427. install Axios [npm i axios] {it provide an object . the object has data , http status code and other things that helps us in development}
+428. to get the data promise use axios.get(url) it will give a promise and have to use use hook to get the data array and from the data properties i have to get the data .
+429. for the chart have to process the data if the array has nested object to simple object cause recharts cannot do anythings with nested object 
+
+<!-- c-9 react awesome component  -->
+430. react awesome component for essential things to do project 
+
+
+<!-- module-43 React Router -->
+<!-- c-1 introduction to  SPA -->
+431. what is SPA? 
+=> Single Page Application
+432. what is MPA?
+=> Multiple Page Application
+433. install react router [npm i react-router]
+434. import createBrowserRouter and RouterProvider
+435. declare a router use createBrowserRouter() and create the router path then pass into the RouterProvider
+
+<!-- c-2 concept of routing  -->
+436. use path to route one component to another 
+437. use children to route in same page 
 
       const router = createBrowserRouter([
-      {
-      path: '/',
-      element: <div>Hello from router</div>
-      }
-      ])
-      createRoot(document.getElementById('root')).render(
-      <StrictMode>
-      <RouterProvider router={router}></RouterProvider>
-      </StrictMode>,
-      )
-
-415. here we can declare multiple path object for different page . here in element we can use an element and also a component
-     {
-     path : 'App',
-     Component: App
-     }
-416. nested route [multiple route inside one router and use outlet to display the children paths]
-      const router = createBrowserRouter([
-      {
-      path: '/',
-      Component: Root,
-      children: [
-      {index: true, Component: Home},
-      {path: 'mobiles', Component: Mobiles},
-      {path: 'laptops', Component: Laptops}
-      ]
-      }
-      ])
-      <div>
-          <h2>Welcome To React Router</h2>
-          <Header></Header>
-          <Outlet></Outlet>
-      </div>
-417. for hyper link i will use Link component from react-router instead of anchor tag
-      <nav className="nav">
-          <Link to={'/'}>Home</Link>
-          <Link to={'/mobiles'}>Mobiles</Link>
-          <Link to={'/laptops'}>Laptops</Link>
-      </nav>
-
-418. NavLink [this is use for navigation anchor but here i can see the active link have default class if i want i can change the class]
-      <nav className="nav">
-          <NavLink to={'/'}>Home</NavLink>
-          <NavLink to={'/mobiles'}>Mobiles</NavLink>
-          <NavLink to={'/laptops'}>Laptops</NavLink>
-      </nav>
-
-419. Multiple Ways To Load Data Using Loader And UseLoaderData
-     1. use loader and normal arrow function to fetch the url
-     2. path and component where data will load then from the component use useLoaderData to get the data
-        const usersFetch = async () => {
-        const res = await fetch("https://jsonplaceholder.typicode.com/users");
-        return res.json();
-        };
         {
-        path: "users2",
-        element: (
-        <Suspense fallback={<h2>Loading...</h2>}>
-        <Users2 usersPromise={usersPromise}></Users2>
-        </Suspense>
-        ),
-        }
-        const usersPromise = usersFetch()
-
-     use()
-     1. use async function outside of main state then use path and element to use suspense to show loader and inside the suspense can pass the component and params and from the function use use to get the data
-        {
-        path: "users1",
-        loader: () => fetch("https://jsonplaceholder.typicode.com/users"),
-        Component: Users1,
-        }
-        useLoaderData()
-
-420. Params ,Create Dynamic Path And Render Dynamic Route
-     1. dynamic routing [using id can show the component details to another component ]
-
-     {
-     path: 'user/:userId',
-     Component: UsersDetails
-     }
-     <div>
-      <h2>Hello From User</h2>
-      <p>Name: {name}</p>
-      <p>Phone: {phone}</p>
-      <Link to={`/user/${id}`}>Show details</Link>
-     </div>
-
-421. Explore Dynamic Route , Params & Load Data Based On Dynamic Route
-     1. use loader to get params
-     2. fetch the url by using params id to get a single data from server
-
-422. Hooks UseNavigate And UseNavigation For Router Spinner
+          path: "/",
+          Component: Root,
+          children: [
+            {
+              index: true,
+              element: <h1>Welcome Home</h1>,
+            },
+            {
+              path: "mobile",
+              element: <h1>All Mobiles are here</h1>,
+            },
+            {
+              path: "laptop",
+              element: <h1>All Laptops are here</h1>,
+            },
+          ],
+        },
+      ]);
+      i can use component instead of element
 
 
-    1. useNavigate use for move somewhere in page like Link and NavLink
-    like this ,
-      import {useLoaderData,useNavigate} from 'react-router';
-      const PostDetails = () => {
-          const details = useLoaderData()
-          // console.log(details)
-          const navigate = useNavigate()
+<!-- c-3 Understand Nested Routing , Outlet , Link And NavLink -->
+438. use NavLink / Link hooks from react router to navigate another component 
+439. NavLink provide an extra class like active then i can use it to show extra css activities 
+
+<!-- c-4 multiple way to load data using loader and useLoaderData  -->
+440. use loader in router and use useLoaderData in the component where the data i want to use.
+    {
+      path: '/users',
+      loader: ()=> fetch('https://jsonplaceholder.typicode.com/users'),
+      Component: Users
+    }
+    const Users = () => {
+      const users = useLoaderData();
+      console.log(users);
+      return (
+        <div>
+          <h1>Hello from Users</h1>
+        </div>
+      );
+    };
+
+441. load data using suspense 
+      {
+        path: "/users2",
+        element: 
+          <Suspense fallback={<h1>Loading...</h1>}>
+            <Users2 usersPromise={usersPromise}></Users2>
+          </Suspense>
+        
+      }
+      const Users2 = ({ usersPromise }) => {
+        const users = use(usersPromise);
+        console.log(users);
+        return <div>
+          <h1>Hello from users 2</h1>
+        </div>;
+      };
+<!-- c-5 Params ,Create Dynamic Path And Render Dynamic Route -->
+442. dynamic route [here is like to click cart or something then show something based on its id]
+443. use params to get the id or data from the dynamic route and destructure in loader to fetch data . it will return an object . 
+
+      {
+        path: "user/:userId",
+        loader: ({ params }) =>
+          fetch(`https://jsonplaceholder.typicode.com/users/${params.userId}`),
+        Component: UserDetails,
+      }
+      const User = ({user}) => {
+          const {id,name , email , phone} = user;
+          return (
+              <div className=" border rounded-2xl">
+                  <h2>{name}</h2>
+                  <p>Email: {email}</p>
+                  <p>Phone: {phone}</p>
+                  <Link to={`/user/${id}`}>Show Details</Link>
+              </div>
+          );
+      };
+      const UserDetails = () => {
+          const data = useLoaderData()
+          console.log(data)
           return (
               <div>
-                  <h2>{details.title}</h2>
-                  <button onClick={()=> navigate(-1)}>Go Back</button>
+                  <h2>user details</h2>
               </div>
           );
       };
 
-    2. useNavigation use for show pending ui like loader/spinner . it will show until the data loading complete like spinner
-    like this
-    import {Outlet, useNavigation} from 'react-router';
-    import '../../App.css'
-    const Root = () => {
-        const navigation = useNavigation()
-        const isNavigating = Boolean(navigation.location)
-        return (
-            <div>
-                {isNavigating && <p>Loading...</p>}
-                <Navbar></Navbar>
-                <Outlet></Outlet>
-                <Footer></Footer>
-            </div>
-        );
+<!-- c-6 Explore Dynamic Route , Params & Load Data Based On Dynamic Route -->
+
+444. now i show the details of users using dynamic route 
+
+<!-- c-7 Hooks UseNavigate And UseNavigator For Router Spinner -->
+
+445. use useNavigate in button to navigate route [here i can use the path link and -1,-2 means go back one step behind]
+    const UserDetails = () => {
+      const data = useLoaderData();
+      console.log(data);
+      const { name, email, phone } = data;
+        const navigate = useNavigate()
+      return (
+        <div>
+          <h2>Name: {name}</h2>
+          <p>Email: {email}</p>
+          <p>Phone: {phone}</p>
+          <button onClick={()=> navigate(-1)}>Go Back</button>
+        </div>
+      );
     };
 
-423. useParams use for get the params where it is using
-     =>
-     import { useLoaderData, useNavigate , useParams} from "react-router";
-     const PostDetails = () => {
-     const post = useLoaderData();
-     const navigate = useNavigate();
-     const params = useParams()
-     console.log(params)
-     return (
-     <div className=" border border-gray-200 rounded-xl p-4">
-     <div>
-     <p>{post.title}</p>
-     <p>{post.body}</p>
-     </div>
-     <button
-     className=" border px-3 py-2 rounded-xl"
-     onClick={() => navigate(-1)} >
-     Go Back
-     </button>
-     </div>
-     );
-     };
-     export default PostDetails;
+446. use useNavigation to see the pending ui 
+    its have to call convert a boolean value its location . it can use in navbar . it means it will show loader until data loaded
+      const Root = () => {
+          const navigation = useNavigation();
+          const isNavigating = Boolean(navigation.location);
+          return (
+              <div>
+                  <Navbar></Navbar>
+                  {
+                      isNavigating && <p>Loading...</p>
+                  }
+                  <Outlet></Outlet>
+              </div>
+          );
+      };
+447. useParams to show the id [i can use it to see what id of item i'm using]
+   const params = useParams()
+    console.log(params)
 
-424. Load Data In The Component Without Route And Not Found 404 Route
-     => this means load data in the same component without route another component
-     => const Post = ({ post }) => {
-     const { id, title } = post;
-     const [showInfo, setShowInfo] = useState(false);
-     const postPromise = fetch(
-     `https://jsonplaceholder.typicode.com/posts/${id}`,
-     ).then((res) => res.json());
-     return (
-     <div className=" border-2 border-red-500 rounded-xl p-15">
-     <h2>
-     {id}. {title}
-     </h2>
-     <Link to={`/post/${id}`}>show details</Link>
-     <button
-     className=" border border-gray-400 ml-4 p-2 rounded-md"
-     onClick={() => setShowInfo(!showInfo)} >
-     {showInfo ? "Hide Info" : "Show Info"}
-     </button>
-     {showInfo && (
-     <Suspense fallback={<p>Loading...</p>}>
-     <PostDetails postPromise={postPromise}></PostDetails>
-     </Suspense>
-     )}
-     </div>
+it can use where the loader data is loading 
 
+<!-- c-8 Load Data In The Component Without Route And Not Found 404 Route -->
 
-    => 404 status when any this cannot find out , use \* path and set a component for it and use it in main.jsx component
+448. Load Data In The Component Without Route
+const User = ({ user }) => {
+  const { id, name, email, phone } = user;
+  const userPromise = fetch(
+    `https://jsonplaceholder.typicode.com/users/${id}`,
+  ).then((res) => res.json());
+  const [showInfo, setShowInfo] = useState(false);
+  return (
+    <div className=" border rounded-2xl">
+      <h2>{name}</h2>
+      <p>Email: {email}</p>
+      <p>Phone: {phone}</p>
+      <Link to={`/user/${id}`}>Show Details</Link>
+      <button className="btn" onClick={() => setShowInfo(!showInfo)}>
+        {showInfo ? "Hide" : "Show"} Info
+      </button>
+      {showInfo && (
+        <Suspense fallback={<p>Loading...</p>}>
+          <UserDetails2 userPromise={userPromise}></UserDetails2>
+        </Suspense>
+      )}
+    </div>
+  );
+};
 
-        {
-        path: '\*',
-        element: <h1>Not Found</h1>
-        }
+449. not found status 
+      {
+        path: '*',
+        element: <p>Not found 404</p>
+      }
 
-425. use navigate component from react-router to go one component to another conditionally
-     like this ,
+ this will be showed when the unavailable page will be search
 
-     const PostDetails = () => {
-     const [visitHome, setVisitHome] = useState(false)
-     if(visitHome){
-     return <Navigate to={'/'}></Navigate>
-     }
-     return (
-     <div className=" border border-gray-200 rounded-xl p-4">
-     <div>
-     <p>{post.title}</p>
-     <p>{post.body}</p>
-     </div>
-     <button
-     className=" border px-3 py-2 rounded-xl"
-     onClick={() => navigate(-1)} >
-     Go Back
-     </button>
-     <button onClick={()=> setVisitHome(!visitHome)}>Visit Home</button>
-     </div>
-     );
-     };
+ <!-- c-9 Navigate UseLocation -->
+ 450. navigate component is like a link hook but it will work conditionally not like waiting for click
 
-
-426. useLocation() it is use to get the current path of component and component info 
-    like this , 
+   const [visitHome, setVisitHome] = useState(false);
+    if (visitHome) {
+      return <Navigate to={"/"}></Navigate>;
+    }
+     <button className=" btn" onClick={() => setVisitHome(true)}>Visit Home</button>
+    </div>
+451. useLocation [it helps to know the state location like where i am using the tab]
     const location = useLocation()
     console.log(location)
 
-427. useRoutes() this the alternative of createBrowserRouter [recommended createBrowserRouter]
+<!-- summary -->
+  1. createBrowserRouter 
+  2. RouterProvider
+  3. Link 
+  4. NavLink
+  5. Outlet
+  6. nested routing 
+  7. loader 
+  8. useLoaderData
+  9. dynamic route
+  10. params 
+  11. useNavigate
+  12. useNavigation
+  13. useParams 
+  14. load data in the same component
+  15. 404 page found
+  16. Navigate 
+  17. useLocation
 
-428. onSubmit to submit form data 
-429. use preventDefault to prevent default behavior 
-430. e.target.inputName.value to access the value 
-431. form with action attribute [it will use when need server side data rendering]
-432. required attribute in input field [without required attribute can prevent Default behavior but form will submit ]
-433. formData [to get data from form]
-434. get data form formData [formData.get('inputName')]
-434.5 controlled field [here when i type the it will show the output instant] here check the condition and show some result instant on ui
 
-uncontrolled field 
-435. useRef()
-<form onSubmit={handleSubmit}>
-        <input type="text" name="name" placeholder="Name" />
-        <br />
-        <input ref={emailRef} type="email" name="email" placeholder="Email" /> <br />
-        <input type="password" name="password" placeholder="Password" /><br />
-        <input type="submit" value="Submit" />
-      </form>
 
-      const emailRef = useRef('')
-      const handleSubmit = (e)=>{
-        e.preventDefault()
-        console.log(emailRef.current.value)
-      }
+<!-- Module - 44 React router core concept part 3 -->
+  <!-- c-1 Access Form Data Using OnSubmit And E Target -->
+452. onSubmit [to submit the form data by click]
+453. e/event object [event object to handle event]
+454. prevent default behavior 
 
-436. Use Custom Hook To Reduce Duplication Of The Code
+<!-- c-2 Use Form Action FormData And Controlled Component -->
+455. use action attribute as click event then get a form data by click [receive a parameter named formData in handler then formData.get(inputFieldName)]
+
+    const FormAction = () => {
+      const handleFormAction = (formData) => {
+        console.log(formData.get("name"));
+        console.log(formData.get("email"));
+      };
+      return (
+        <div>
+          <form action={handleFormAction}>
+            <input type="text" name="name" placeholder="Name" /> <br />
+            <input type="email" name="email" placeholder="Email" /> <br />
+            <input type="submit" value="Submit" />
+          </form>
+        </div>
+      );
+    };
+
+456. controlled field : it used when have to show ui update before submit the form 
+    const ControlledField = () => {
+      const [pass, setPass] = useState("");
+      const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log("submitted");
+      };
+      const onChangeHandler = (e) => {
+        console.log(e.target.value);
+      };
+      return (
+        <div>
+          <form onSubmit={handleSubmit}>
+            <input type="email" name="email" placeholder="Email" /> <br />
+            <input
+              type="password"
+              name="password"
+              placeholder="Password"
+              onChange={onChangeHandler}
+              defaultValue={pass}
+              required
+            />{" "}
+            <br />
+            <input type="submit" value="Submit" />
+          </form>
+        </div>
+      );
+    };
+
+
+
+457. required [to prevent submit until the field empty]
+
+
+    <!-- multiple to get data from form -->
+    1. using target [e.target.inputFieldName.value]
+    2. using action formData [formData.get('inputFieldName')]
+    3. controlled component
+
+<!-- c-3 Controlled And Uncontrolled Ways To Collect Form Data -->
+458. controlled field use for show instant ui update without waiting submit form 
+459. uncontrolled field using useRef [which is get data using reference of input field]
+460. to get the value using useRef [InputRef.current.value]
+      const Uncontrolled = () => {
+          const emailRef = useRef('')
+          const passwordRef = useRef('')
+          const handleSubmit = e => {
+              e.preventDefault()
+              console.log(emailRef.current.value)
+              console.log(passwordRef.current.value)
+          }
+
+          return (
+              <form onClick={handleSubmit}>
+                  <input type="email" ref={emailRef} name="email" placeholder="Email" />
+                  <br />
+                  <input type="password" ref={passwordRef} name="password" placeholder="Password" />
+                  <br />
+                  <input type="submit" value="Submit" />
+              </form>
+          );
+      };
+
+
+<!-- c-4  Use Custom Hook To Reduce Duplication Of The Code -->
+461. hooks start with use then any name [useName]
+462. here the hooks will return 2 value first value second handler 
+463. now declare the hooks and use in input field use onChange for the handler and value as defaultValue and a normal handler to prevent default behavior 
+
     import { useState } from "react";
-
-    const useInputField = (defaultValue) => {
-      const [value, setValue] = useState(defaultValue);
-      const handleValue = (e) => {
+    
+    const useInputField = (initialValue) => {
+      const [value, setValue] = useState(initialValue);
+      const handler = (e) => {
         setValue(e.target.value);
       };
-      return [value, handleValue];
-    };
-
-    export default useInputField;
-
-    const handleSubmit = (e) => {
-      e.preventDefault();
-      console.log(email);
+      return [value, handler];
     };
     
-    <form onSubmit={handleSubmit}>
-        <input
-          type="email"
-          onChange={setEmail}
-          name="email"
-          placeholder="Your Email"
-        />
-        <br />
-        <input type="password" name="password" placeholder="Your Password" />
-        <br />
-        <input type="submit" value="Submit" />
-      </form>
-    const [email, setEmail] = useInputField("");
-    
-437. Create Product Form And Collect Product Data
-438. Display form data in a table and form error handle
+    export { useInputField };
+    const HookForm = () => {
+      const [name, handleName] = useInputField("");
+      const [email, handleEmail] = useInputField("");
+      const [password, handlePassword] = useInputField("");
+      const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log("clicked", name,email,password);
+      };
+      return (
+        <div>
+          <form onSubmit={handleSubmit}>
+            <input
+              type="text"
+              defaultValue={name}
+              onChange={handleName}
+              name="name"
+              id=""
+              placeholder="Name"
+            />
+            <br />
+            <input type="email" onChange={handleEmail} name="email" id="" placeholder="Email" />
+            <br />
+            <input type="password" onChange={handlePassword} name="password" id="" placeholder="Password" />
+            <br />
+            <input type="submit" value="Submit" />
+          </form>
+        </div>
+      );
+    };
 
-439. family tree [props drilling]
-440. context api
-441. context api provider 
-442. Virtual DOM vs Actual DOM
-443. render vs re-render
-444. reactivity 
-445. server side rendering 
-446. client side rendering
-447. 
+<!-- c-5/6 Create Product Form And Collect Product Data -->
+
+464. create a product form and display data in a table . if i want i can show a validation message in display based on input value
+
+      const ProductManagement = () => {
+        const [products, setProducts] = useState([]);
+        const handleAddProduct = (product) => {
+          const newProducts = [...products, product];
+          setProducts(newProducts);
+          console.log(products);
+        };
+        return (
+          <div>
+            <ProductForm handleAddProduct={handleAddProduct}></ProductForm>
+            <ProductTable products={products}></ProductTable>
+          </div>
+        );
+      };
+
+      const ProductForm = ({ handleAddProduct }) => {
+        const handleSubmitProduct = (e) => {
+          e.preventDefault();
+          const productName = e.target.product.value;
+          const price = e.target.price.value;
+          const quantity = e.target.quantity.value;
+          // console.log(productName,price,quantity)
+          const newProduct = {
+            productName,
+            price,
+            quantity,
+          };
+          handleAddProduct(newProduct);
+          console.log(newProduct);
+        };
+
+        return (
+          <div>
+            <form onSubmit={handleSubmitProduct}>
+              <input type="text" name="product" placeholder="Product" />
+              <br />
+              <input type="text" name="quantity" placeholder="Quantity" />
+              <br />
+              <input type="text" name="price" placeholder="Price" />
+              <br />
+              <input type="submit" value="Submit" />
+            </form>
+          </div>
+        );
+      };
+
+      const ProductTable = ({ products }) => {
+        return (
+          <div>
+            <h2>{products.length}</h2>
+            <table>
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Price</th>
+                  <th>Quantity</th>
+                </tr>
+              </thead>
+              <tbody>
+                {products.map((product) => (
+                  <tr>
+                    <td>{product.productName}</td>
+                    <td>{product.price}</td>
+                    <td>{product.quantity}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        );
+      };
+<!-- c-7  Family Component Tree Structure  -->
+465. Create A Family Component Tree Structure 
+  => this is called like a family like grand father to grand child
+  => if i have to send a data to grand child i have to send like a props higher to lower 
+  => for this case i have to do props drilling 
+
+<!-- c-8 Introduction To Context API And Simple Context -->
+467. Introduction To Context API And Simple Context
+=> it is used to pass data parent to child without use props drilling 
+=> it is use like a network tower 
+=> here i have to create a context and export 
+=> then the parent component wrap with the context.provider/context then pass the data as value 
+=> to receive the data use useContext/use and pass the the context to get the data 
+=> then the data will be available to use
+
+
+    export const AssetContext = createContext("");
+
+    function App() {
+      const asset = "Diamond";
+
+      return (
+        <>
+          <h2>React Form</h2>
+          <AssetContext.Provider value={asset}>
+            <ProductManagement></ProductManagement>
+          </AssetContext.Provider>
+        </>
+      );
+    }
+
+    export default App;
+
+    <!-- to receive another component  -->
+    const asset = useContext(AssetContext)
+
+
+
+<!-- milestone - 9 react authentication -->
+<!-- module-47 -->
+
+468. 
