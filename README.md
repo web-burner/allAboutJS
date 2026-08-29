@@ -61,23 +61,7 @@ All about JS
 50. continue(skip this iteration)
 51. do while loop (run at least once)
 
-module-15.5(Array) 
-52. array length 
-53. array index(start from 0) 
-54. array index access arrayName[indexNumber] 
-55. set or update value of array by index 
-56. push (add element in the last) 
-57. pop (remove the last element) 
-58. shift (remove the first element) 
-59. unshift (add element as first element) 
-60. array method 
-61. includes 
-62. indexOf 
-63. isArray 
-64. join 
-65. concat 
-66. slice 
-67. splice
+module-15.5(Array) 52. array length 53. array index(start from 0) 54. array index access arrayName[indexNumber] 55. set or update value of array by index 56. push (add element in the last) 57. pop (remove the last element) 58. shift (remove the first element) 59. unshift (add element as first element) 60. array method 61. includes 62. indexOf 63. isArray 64. join 65. concat 66. slice 67. splice
 
 <!-- module-16(String and Object) -->
 
@@ -141,24 +125,25 @@ module-15.5(Array)
 119. Return All The Even Numbers Of An Array
 
 <!-- module - 20 (problem solving part 1) 120. convert inch to feet 121. convert miles to kilometers  -->
-122. leap years 
-123. average of obd numbers 
-124. remove duplicates from array 
-125. math 
-126. abs 
-127. round 
-128. ceil 
-129. floor 
-130. random 
-131. min number 
-132. max number 
-133. date and time 
+
+122. leap years
+123. average of obd numbers
+124. remove duplicates from array
+125. math
+126. abs
+127. round
+128. ceil
+129. floor
+130. random
+131. min number
+132. max number
+133. date and time
 134. today , specific date ,\
-135. get and set day/date/month/year 
-136. get time 
-137. toLocaleDateString 
-138. toLocaleTimeString 
-139. toLocaleString 
+135. get and set day/date/month/year
+136. get time
+137. toLocaleDateString
+138. toLocaleTimeString
+139. toLocaleString
 140. swap variable , destructing
 
 module - 21 (problem solving part 2)
@@ -172,11 +157,7 @@ module - 21 (problem solving part 2)
 147. simple Calculator To Call Function Inside A Function
 148. Handle Unexpected Function Input Parameter Error (check the type of parameter is it valid)
 
-module - 22.5 (bonus module) 
-149. nested object 
-150. object value can be array , object or function 
-151. arguments and can access all arguments from inside function and it will return array like object 
-152. find the matching product by searching
+module - 22.5 (bonus module) 149. nested object 150. object value can be array , object or function 151. arguments and can access all arguments from inside function and it will return array like object 152. find the matching product by searching
 
     <!-- milestone - 5 Interactive Javascript and DOM -->
 
@@ -802,275 +783,285 @@ module - 23 (Recap - web design , tailwind and responsive)
 
 408. imgbb to upload image and get an direct link to use in json file.
 
-
 <!-- Milestone - 8 (React Router) -->
 
 <!-- module - 42 (Tailwind CSS, Axios, Rechart, Awesome components) -->
 <!-- c-1 : setup daisyui and tailwind with react -->
+
 409. install tailwind css [npm i tailwindcss @tailwindcss/vite]
 410. plugin[tailwindcss()] in vite.config
-411. import tailwindcss in app.css 
-412. import font from google 
+411. import tailwindcss in app.css
+412. import font from google
 413. install daisyui [plugin in app.css]
 
 <!-- c-3 start a custom navigation and install lucide icons -->
+
 414. install lucide react [npm i lucide-react] / install react icon
 415. create a custom navigation bar
 
 <!-- c-3 dynamic menu button toggle and menu toggle  -->
+
 416. use a boolean useState to toggle the menu icon
 417. use a (!) not sign to toggle the value when button clicked
 
 <!-- c-4 toggle menu item and create pricing options -->
+
 418. create a toggle and menu will visible when button clicked
-419. create pricing card using fake data 
-420. set a loader 
+419. create pricing card using fake data
+420. set a loader
 
 <!-- c-5 display pricing cart using daisy ui and fake data  -->
-421. display pricing cart 
+
+421. display pricing cart
 
 <!-- c-7 charts  -->
 
 422. install recharts [npm i recharts]
-423. choose charts style 
-424. set the data as variable data inside the charts style component 
+423. choose charts style
+424. set the data as variable data inside the charts style component
 425. import line and and set the properties as dataKey [direct properties name]
-426. set XAxis and YAxis as dataKey 
+426. set XAxis and YAxis as dataKey
 
 <!-- c-8 Axios for data processing  -->
+
 427. install Axios [npm i axios] {it provide an object . the object has data , http status code and other things that helps us in development}
 428. to get the data promise use axios.get(url) it will give a promise and have to use use hook to get the data array and from the data properties i have to get the data .
-429. for the chart have to process the data if the array has nested object to simple object cause recharts cannot do anythings with nested object 
+429. for the chart have to process the data if the array has nested object to simple object cause recharts cannot do anythings with nested object
 
 <!-- c-9 react awesome component  -->
-430. react awesome component for essential things to do project 
 
+430. react awesome component for essential things to do project
 
 <!-- module-43 React Router -->
 <!-- c-1 introduction to  SPA -->
-431. what is SPA? 
-=> Single Page Application
+
+431. what is SPA?
+     => Single Page Application
 432. what is MPA?
-=> Multiple Page Application
+     => Multiple Page Application
 433. install react router [npm i react-router]
 434. import createBrowserRouter and RouterProvider
 435. declare a router use createBrowserRouter() and create the router path then pass into the RouterProvider
 
 <!-- c-2 concept of routing  -->
-436. use path to route one component to another 
-437. use children to route in same page 
 
-      const router = createBrowserRouter([
-        {
-          path: "/",
-          Component: Root,
-          children: [
-            {
-              index: true,
-              element: <h1>Welcome Home</h1>,
-            },
-            {
-              path: "mobile",
-              element: <h1>All Mobiles are here</h1>,
-            },
-            {
-              path: "laptop",
-              element: <h1>All Laptops are here</h1>,
-            },
-          ],
-        },
-      ]);
-      i can use component instead of element
+436. use path to route one component to another
+437. use children to route in same page
 
+     const router = createBrowserRouter([
+     {
+     path: "/",
+     Component: Root,
+     children: [
+     {
+     index: true,
+     element: <h1>Welcome Home</h1>,
+     },
+     {
+     path: "mobile",
+     element: <h1>All Mobiles are here</h1>,
+     },
+     {
+     path: "laptop",
+     element: <h1>All Laptops are here</h1>,
+     },
+     ],
+     },
+     ]);
+     i can use component instead of element
 
 <!-- c-3 Understand Nested Routing , Outlet , Link And NavLink -->
-438. use NavLink / Link hooks from react router to navigate another component 
-439. NavLink provide an extra class like active then i can use it to show extra css activities 
+
+438. use NavLink / Link hooks from react router to navigate another component
+439. NavLink provide an extra class like active then i can use it to show extra css activities
 
 <!-- c-4 multiple way to load data using loader and useLoaderData  -->
-440. use loader in router and use useLoaderData in the component where the data i want to use.
-    {
+
+440.  use loader in router and use useLoaderData in the component where the data i want to use.
+      {
       path: '/users',
       loader: ()=> fetch('https://jsonplaceholder.typicode.com/users'),
       Component: Users
-    }
-    const Users = () => {
+      }
+      const Users = () => {
       const users = useLoaderData();
       console.log(users);
       return (
-        <div>
-          <h1>Hello from Users</h1>
-        </div>
+      <div>
+      <h1>Hello from Users</h1>
+      </div>
       );
-    };
+      };
 
-441. load data using suspense 
+441.  load data using suspense
       {
-        path: "/users2",
-        element: 
-          <Suspense fallback={<h1>Loading...</h1>}>
-            <Users2 usersPromise={usersPromise}></Users2>
-          </Suspense>
-        
+      path: "/users2",
+      element:
+      <Suspense fallback={<h1>Loading...</h1>}>
+      <Users2 usersPromise={usersPromise}></Users2>
+      </Suspense>
       }
       const Users2 = ({ usersPromise }) => {
-        const users = use(usersPromise);
-        console.log(users);
-        return <div>
-          <h1>Hello from users 2</h1>
-        </div>;
+      const users = use(usersPromise);
+      console.log(users);
+      return <div>
+      <h1>Hello from users 2</h1>
+      </div>;
       };
-<!-- c-5 Params ,Create Dynamic Path And Render Dynamic Route -->
-442. dynamic route [here is like to click cart or something then show something based on its id]
-443. use params to get the id or data from the dynamic route and destructure in loader to fetch data . it will return an object . 
+      <!-- c-5 Params ,Create Dynamic Path And Render Dynamic Route -->
+442.  dynamic route [here is like to click cart or something then show something based on its id]
+443.  use params to get the id or data from the dynamic route and destructure in loader to fetch data . it will return an object .
 
       {
-        path: "user/:userId",
-        loader: ({ params }) =>
-          fetch(`https://jsonplaceholder.typicode.com/users/${params.userId}`),
-        Component: UserDetails,
+      path: "user/:userId",
+      loader: ({ params }) =>
+      fetch(`https://jsonplaceholder.typicode.com/users/${params.userId}`),
+      Component: UserDetails,
       }
       const User = ({user}) => {
-          const {id,name , email , phone} = user;
-          return (
-              <div className=" border rounded-2xl">
-                  <h2>{name}</h2>
-                  <p>Email: {email}</p>
-                  <p>Phone: {phone}</p>
-                  <Link to={`/user/${id}`}>Show Details</Link>
-              </div>
-          );
-      };
-      const UserDetails = () => {
-          const data = useLoaderData()
-          console.log(data)
-          return (
-              <div>
-                  <h2>user details</h2>
-              </div>
-          );
-      };
-
-<!-- c-6 Explore Dynamic Route , Params & Load Data Based On Dynamic Route -->
-
-444. now i show the details of users using dynamic route 
-
-<!-- c-7 Hooks UseNavigate And UseNavigator For Router Spinner -->
-
-445. use useNavigate in button to navigate route [here i can use the path link and -1,-2 means go back one step behind]
-    const UserDetails = () => {
-      const data = useLoaderData();
-      console.log(data);
-      const { name, email, phone } = data;
-        const navigate = useNavigate()
+      const {id,name , email , phone} = user;
       return (
-        <div>
-          <h2>Name: {name}</h2>
-          <p>Email: {email}</p>
-          <p>Phone: {phone}</p>
-          <button onClick={()=> navigate(-1)}>Go Back</button>
-        </div>
-      );
-    };
-
-446. use useNavigation to see the pending ui 
-    its have to call convert a boolean value its location . it can use in navbar . it means it will show loader until data loaded
-      const Root = () => {
-          const navigation = useNavigation();
-          const isNavigating = Boolean(navigation.location);
-          return (
-              <div>
-                  <Navbar></Navbar>
-                  {
-                      isNavigating && <p>Loading...</p>
-                  }
-                  <Outlet></Outlet>
-              </div>
-          );
-      };
-447. useParams to show the id [i can use it to see what id of item i'm using]
-   const params = useParams()
-    console.log(params)
-
-it can use where the loader data is loading 
-
-<!-- c-8 Load Data In The Component Without Route And Not Found 404 Route -->
-
-448. Load Data In The Component Without Route
-const User = ({ user }) => {
-  const { id, name, email, phone } = user;
-  const userPromise = fetch(
-    `https://jsonplaceholder.typicode.com/users/${id}`,
-  ).then((res) => res.json());
-  const [showInfo, setShowInfo] = useState(false);
-  return (
-    <div className=" border rounded-2xl">
+      <div className=" border rounded-2xl">
       <h2>{name}</h2>
       <p>Email: {email}</p>
       <p>Phone: {phone}</p>
       <Link to={`/user/${id}`}>Show Details</Link>
-      <button className="btn" onClick={() => setShowInfo(!showInfo)}>
-        {showInfo ? "Hide" : "Show"} Info
-      </button>
-      {showInfo && (
-        <Suspense fallback={<p>Loading...</p>}>
-          <UserDetails2 userPromise={userPromise}></UserDetails2>
-        </Suspense>
-      )}
-    </div>
-  );
-};
+      </div>
+      );
+      };
+      const UserDetails = () => {
+      const data = useLoaderData()
+      console.log(data)
+      return (
+      <div>
+      <h2>user details</h2>
+      </div>
+      );
+      };
 
-449. not found status 
-      {
-        path: '*',
-        element: <p>Not found 404</p>
-      }
+<!-- c-6 Explore Dynamic Route , Params & Load Data Based On Dynamic Route -->
 
- this will be showed when the unavailable page will be search
+444. now i show the details of users using dynamic route
+
+<!-- c-7 Hooks UseNavigate And UseNavigator For Router Spinner -->
+
+445. use useNavigate in button to navigate route [here i can use the path link and -1,-2 means go back one step behind]
+     const UserDetails = () => {
+     const data = useLoaderData();
+     console.log(data);
+     const { name, email, phone } = data;
+     const navigate = useNavigate()
+     return (
+     <div>
+     <h2>Name: {name}</h2>
+     <p>Email: {email}</p>
+     <p>Phone: {phone}</p>
+     <button onClick={()=> navigate(-1)}>Go Back</button>
+     </div>
+     );
+     };
+
+446. use useNavigation to see the pending ui
+     its have to call convert a boolean value its location . it can use in navbar . it means it will show loader until data loaded
+     const Root = () => {
+     const navigation = useNavigation();
+     const isNavigating = Boolean(navigation.location);
+     return (
+     <div>
+     <Navbar></Navbar>
+     {
+     isNavigating && <p>Loading...</p>
+     }
+     <Outlet></Outlet>
+     </div>
+     );
+     };
+447. useParams to show the id [i can use it to see what id of item i'm using]
+     const params = useParams()
+     console.log(params)
+
+it can use where the loader data is loading
+
+<!-- c-8 Load Data In The Component Without Route And Not Found 404 Route -->
+
+448. Load Data In The Component Without Route
+     const User = ({ user }) => {
+     const { id, name, email, phone } = user;
+     const userPromise = fetch(
+     `https://jsonplaceholder.typicode.com/users/${id}`,
+     ).then((res) => res.json());
+     const [showInfo, setShowInfo] = useState(false);
+     return (
+     <div className=" border rounded-2xl">
+     <h2>{name}</h2>
+     <p>Email: {email}</p>
+     <p>Phone: {phone}</p>
+     <Link to={`/user/${id}`}>Show Details</Link>
+     <button className="btn" onClick={() => setShowInfo(!showInfo)}>
+     {showInfo ? "Hide" : "Show"} Info
+     </button>
+     {showInfo && (
+     <Suspense fallback={<p>Loading...</p>}>
+     <UserDetails2 userPromise={userPromise}></UserDetails2>
+     </Suspense>
+     )}
+     </div>
+     );
+     };
+
+449. not found status
+     {
+     path: '\*',
+     element: <p>Not found 404</p>
+     }
+
+this will be showed when the unavailable page will be search
 
  <!-- c-9 Navigate UseLocation -->
- 450. navigate component is like a link hook but it will work conditionally not like waiting for click
 
-   const [visitHome, setVisitHome] = useState(false);
-    if (visitHome) {
-      return <Navigate to={"/"}></Navigate>;
-    }
-     <button className=" btn" onClick={() => setVisitHome(true)}>Visit Home</button>
-    </div>
-451. useLocation [it helps to know the state location like where i am using the tab]
-    const location = useLocation()
-    console.log(location)
+450.  navigate component is like a link hook but it will work conditionally not like waiting for click
+
+const [visitHome, setVisitHome] = useState(false);
+if (visitHome) {
+return <Navigate to={"/"}></Navigate>;
+}
+<button className=" btn" onClick={() => setVisitHome(true)}>Visit Home</button>
+
+</div> 451. useLocation [it helps to know the state location like where i am using the tab]
+const location = useLocation()
+console.log(location)
 
 <!-- summary -->
-  1. createBrowserRouter 
-  2. RouterProvider
-  3. Link 
-  4. NavLink
-  5. Outlet
-  6. nested routing 
-  7. loader 
-  8. useLoaderData
-  9. dynamic route
-  10. params 
-  11. useNavigate
-  12. useNavigation
-  13. useParams 
-  14. load data in the same component
-  15. 404 page found
-  16. Navigate 
-  17. useLocation
 
-
+1. createBrowserRouter
+2. RouterProvider
+3. Link
+4. NavLink
+5. Outlet
+6. nested routing
+7. loader
+8. useLoaderData
+9. dynamic route
+10. params
+11. useNavigate
+12. useNavigation
+13. useParams
+14. load data in the same component
+15. 404 page found
+16. Navigate
+17. useLocation
 
 <!-- Module - 44 React router core concept part 3 -->
   <!-- c-1 Access Form Data Using OnSubmit And E Target -->
+
 452. onSubmit [to submit the form data by click]
 453. e/event object [event object to handle event]
-454. prevent default behavior 
+454. prevent default behavior
 
 <!-- c-2 Use Form Action FormData And Controlled Component -->
+
 455. use action attribute as click event then get a form data by click [receive a parameter named formData in handler then formData.get(inputFieldName)]
+
 
     const FormAction = () => {
       const handleFormAction = (formData) => {
@@ -1088,36 +1079,34 @@ const User = ({ user }) => {
       );
     };
 
-456. controlled field : it used when have to show ui update before submit the form 
-    const ControlledField = () => {
-      const [pass, setPass] = useState("");
-      const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log("submitted");
-      };
-      const onChangeHandler = (e) => {
-        console.log(e.target.value);
-      };
-      return (
-        <div>
-          <form onSubmit={handleSubmit}>
-            <input type="email" name="email" placeholder="Email" /> <br />
-            <input
-              type="password"
-              name="password"
-              placeholder="Password"
-              onChange={onChangeHandler}
-              defaultValue={pass}
-              required
-            />{" "}
-            <br />
-            <input type="submit" value="Submit" />
-          </form>
-        </div>
-      );
-    };
-
-
+456. controlled field : it used when have to show ui update before submit the form
+     const ControlledField = () => {
+     const [pass, setPass] = useState("");
+     const handleSubmit = (e) => {
+     e.preventDefault();
+     console.log("submitted");
+     };
+     const onChangeHandler = (e) => {
+     console.log(e.target.value);
+     };
+     return (
+     <div>
+     <form onSubmit={handleSubmit}>
+     <input type="email" name="email" placeholder="Email" /> <br />
+     <input
+               type="password"
+               name="password"
+               placeholder="Password"
+               onChange={onChangeHandler}
+               defaultValue={pass}
+               required
+             />{" "}
+     <br />
+     <input type="submit" value="Submit" />
+     </form>
+     </div>
+     );
+     };
 
 457. required [to prevent submit until the field empty]
 
@@ -1128,37 +1117,40 @@ const User = ({ user }) => {
     3. controlled component
 
 <!-- c-3 Controlled And Uncontrolled Ways To Collect Form Data -->
-458. controlled field use for show instant ui update without waiting submit form 
-459. uncontrolled field using useRef [which is get data using reference of input field]
-460. to get the value using useRef [InputRef.current.value]
-      const Uncontrolled = () => {
-          const emailRef = useRef('')
-          const passwordRef = useRef('')
-          const handleSubmit = e => {
-              e.preventDefault()
-              console.log(emailRef.current.value)
-              console.log(passwordRef.current.value)
-          }
 
-          return (
-              <form onClick={handleSubmit}>
-                  <input type="email" ref={emailRef} name="email" placeholder="Email" />
-                  <br />
-                  <input type="password" ref={passwordRef} name="password" placeholder="Password" />
-                  <br />
-                  <input type="submit" value="Submit" />
-              </form>
-          );
+458.  controlled field use for show instant ui update without waiting submit form
+459.  uncontrolled field using useRef [which is get data using reference of input field]
+460.  to get the value using useRef [InputRef.current.value]
+      const Uncontrolled = () => {
+      const emailRef = useRef('')
+      const passwordRef = useRef('')
+      const handleSubmit = e => {
+      e.preventDefault()
+      console.log(emailRef.current.value)
+      console.log(passwordRef.current.value)
+      }
+
+           return (
+               <form onClick={handleSubmit}>
+                   <input type="email" ref={emailRef} name="email" placeholder="Email" />
+                   <br />
+                   <input type="password" ref={passwordRef} name="password" placeholder="Password" />
+                   <br />
+                   <input type="submit" value="Submit" />
+               </form>
+           );
+
       };
 
-
 <!-- c-4  Use Custom Hook To Reduce Duplication Of The Code -->
+
 461. hooks start with use then any name [useName]
-462. here the hooks will return 2 value first value second handler 
-463. now declare the hooks and use in input field use onChange for the handler and value as defaultValue and a normal handler to prevent default behavior 
+462. here the hooks will return 2 value first value second handler
+463. now declare the hooks and use in input field use onChange for the handler and value as defaultValue and a normal handler to prevent default behavior
+
 
     import { useState } from "react";
-    
+
     const useInputField = (initialValue) => {
       const [value, setValue] = useState(initialValue);
       const handler = (e) => {
@@ -1166,7 +1158,7 @@ const User = ({ user }) => {
       };
       return [value, handler];
     };
-    
+
     export { useInputField };
     const HookForm = () => {
       const [name, handleName] = useInputField("");
@@ -1200,93 +1192,96 @@ const User = ({ user }) => {
 
 <!-- c-5/6 Create Product Form And Collect Product Data -->
 
-464. create a product form and display data in a table . if i want i can show a validation message in display based on input value
+464.  create a product form and display data in a table . if i want i can show a validation message in display based on input value
 
-      const ProductManagement = () => {
-        const [products, setProducts] = useState([]);
-        const handleAddProduct = (product) => {
-          const newProducts = [...products, product];
-          setProducts(newProducts);
-          console.log(products);
-        };
-        return (
-          <div>
-            <ProductForm handleAddProduct={handleAddProduct}></ProductForm>
-            <ProductTable products={products}></ProductTable>
-          </div>
-        );
-      };
+            const ProductManagement = () => {
+              const [products, setProducts] = useState([]);
+              const handleAddProduct = (product) => {
+                const newProducts = [...products, product];
+                setProducts(newProducts);
+                console.log(products);
+              };
+              return (
+                <div>
+                  <ProductForm handleAddProduct={handleAddProduct}></ProductForm>
+                  <ProductTable products={products}></ProductTable>
+                </div>
+              );
+            };
 
-      const ProductForm = ({ handleAddProduct }) => {
-        const handleSubmitProduct = (e) => {
-          e.preventDefault();
-          const productName = e.target.product.value;
-          const price = e.target.price.value;
-          const quantity = e.target.quantity.value;
-          // console.log(productName,price,quantity)
-          const newProduct = {
-            productName,
-            price,
-            quantity,
-          };
-          handleAddProduct(newProduct);
-          console.log(newProduct);
-        };
+            const ProductForm = ({ handleAddProduct }) => {
+              const handleSubmitProduct = (e) => {
+                e.preventDefault();
+                const productName = e.target.product.value;
+                const price = e.target.price.value;
+                const quantity = e.target.quantity.value;
+                // console.log(productName,price,quantity)
+                const newProduct = {
+                  productName,
+                  price,
+                  quantity,
+                };
+                handleAddProduct(newProduct);
+                console.log(newProduct);
+              };
 
-        return (
-          <div>
-            <form onSubmit={handleSubmitProduct}>
-              <input type="text" name="product" placeholder="Product" />
-              <br />
-              <input type="text" name="quantity" placeholder="Quantity" />
-              <br />
-              <input type="text" name="price" placeholder="Price" />
-              <br />
-              <input type="submit" value="Submit" />
-            </form>
-          </div>
-        );
-      };
+              return (
+                <div>
+                  <form onSubmit={handleSubmitProduct}>
+                    <input type="text" name="product" placeholder="Product" />
+                    <br />
+                    <input type="text" name="quantity" placeholder="Quantity" />
+                    <br />
+                    <input type="text" name="price" placeholder="Price" />
+                    <br />
+                    <input type="submit" value="Submit" />
+                  </form>
+                </div>
+              );
+            };
 
-      const ProductTable = ({ products }) => {
-        return (
-          <div>
-            <h2>{products.length}</h2>
-            <table>
-              <thead>
-                <tr>
-                  <th>Name</th>
-                  <th>Price</th>
-                  <th>Quantity</th>
-                </tr>
-              </thead>
-              <tbody>
-                {products.map((product) => (
-                  <tr>
-                    <td>{product.productName}</td>
-                    <td>{product.price}</td>
-                    <td>{product.quantity}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        );
-      };
-<!-- c-7  Family Component Tree Structure  -->
-465. Create A Family Component Tree Structure 
-  => this is called like a family like grand father to grand child
-  => if i have to send a data to grand child i have to send like a props higher to lower 
-  => for this case i have to do props drilling 
+            const ProductTable = ({ products }) => {
+              return (
+                <div>
+                  <h2>{products.length}</h2>
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {products.map((product) => (
+                        <tr>
+                          <td>{product.productName}</td>
+                          <td>{product.price}</td>
+                          <td>{product.quantity}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              );
+            };
+
+      <!-- c-7  Family Component Tree Structure  -->
+
+465.  Create A Family Component Tree Structure
+      => this is called like a family like grand father to grand child
+      => if i have to send a data to grand child i have to send like a props higher to lower
+      => for this case i have to do props drilling
 
 <!-- c-8 Introduction To Context API And Simple Context -->
+
 467. Introduction To Context API And Simple Context
-=> it is used to pass data parent to child without use props drilling 
-=> it is use like a network tower 
-=> here i have to create a context and export 
-=> then the parent component wrap with the context.provider/context then pass the data as value 
-=> to receive the data use useContext/use and pass the the context to get the data 
-=> then the data will be available to use
+     => it is used to pass data parent to child without use props drilling
+     => it is use like a network tower
+     => here i have to create a context and export
+     => then the parent component wrap with the context.provider/context then pass the data as value
+     => to receive the data use useContext/use and pass the the context to get the data
+     => then the data will be available to use
 
 
     export const AssetContext = createContext("");
@@ -1309,9 +1304,117 @@ const User = ({ user }) => {
     <!-- to receive another component  -->
     const asset = useContext(AssetContext)
 
-
-
 <!-- milestone - 9 react authentication -->
-<!-- module-47 -->
+<!-- module-47 Simple React Firebase authentication  -->
 
-468. 
+<!-- c-1 authentication and authorization -->
+
+468. authentication ~ direct signin using email and password (to access something)
+469. authorization ~ signin with third party authorization [ sign in with facebook ,apple, google and github]
+470. encryption: this is the technology which is secure the data from hacker
+
+<!-- c-2 Project And Router Setup For Simple Firebase Authentication -->
+<!-- c3 Create Firebase Project And Initialize Firebase Auth -->
+<!-- c-4 Set Sign In With Google And Open Google Login Popup -->
+<!-- c-5  Display Logged-In User Info, Sign Out, Toggle Sign In, Sign Out -->
+
+471.  setup
+      1. create a project
+      2. install and setup router
+      3. setup the outlet
+      4. create a firebase project
+      5. set a name of project
+      6. go to the security and select authentication select google authentication and enable and save
+      7. set a support email address
+      8. go to the project settings
+      9. choose a application of your own / select web
+      10. app name
+      11. install firebase
+      12. copy the info and save in js file [firebase.info.js]
+      13. go to the firebase , select build ,select authentication, select docs then select web and select get started,
+      14. import getAuth from firebase/auth
+      15. export auth var with call getAuth(app)
+      16. sing in with google [web modular api]
+      17. import googleAuthProvider and store as provider var [const provider = new GoogleAuthProvider()] and call the auth
+      18. declare a handler and import signInWithPopup(auth,provider).then(result).catch(error)
+      19. remove google permission [myaccount.google.com/security]
+      20. show details user details in ui
+      21. declare a state and set the user data in the state
+      22. sign out the user [call signout from firebase and handle it by click setUser null if user have then show sign out button if not show sign in button]
+
+      <!-- c-6/c-7 Enable Github Sign-In And Create GitHub Application -->
+      23. choose github in authentication
+      24. go to the github profile > settings > developer settings> new github app
+      25. set name and homepage url
+      26. set callback url
+      27. set the client id and client secret to firebase
+
+      <!-- c-8  Extract Email From Github Sign In -->
+      28. to get email set a provider.scope('user:email')
+
+<!-- module-48 email password authentication -->
+<!-- c-1 /c2 -->
+
+472. simple form to register
+     1. if have to create new account then it will show sign up / register
+     2. if already have an account then it will show sign in/log in/already have an account
+473. to register as new user
+
+<!-- c-3 Create A New User Using Email And Password On Firebase -->
+
+474. /\*\*
+
+- 1.  create a firebase project
+- 2.  create a web app
+- 3.  install firebase in your project
+- 4.  get config
+- 5.  initialize authentication method
+- 6.  go to doc and initialize auth>build>authentication>get started
+- 7.  specific authentication method email/password
+      \*/
+
+ <!-- c-4  Simple Input Field Validation, Error Message -->
+
+475.  to see the error massage [error.massage];
+476.  client side validation
+477.  successful message
+
+ <!-- c-5 Regular Expression Validation And Show Success -->
+
+478.  regex[regular expression] use for email , phone and password validation
+479.  create pattern to check the email , password and phone
+
+
+    const maximum = /^.{6,}$/;
+    const upperCase = /(?=.*[A-Z])/;
+    const numeric = /(?=.*\d)/;
+    const symbol = /(?=.*[!@#$%^&*])/;
+
+    if (!maximum.test(password)) {
+      setError("Password minimum 6 character");
+      return;
+    } else if (!upperCase.test(password)) {
+      setError("At least one UpperCase needed");
+      return;
+    } else if (!numeric.test(password)) {
+      setError("At least one number needed");
+      return;
+    } else if (!symbol.test(password)) {
+      setError("At least one special character");
+      return;
+    }
+
+<!-- c-6 Toggle Show Password And Accept Terms And Conditions -->
+480. create a button to show password and toggle the show button and show and hide the password
+
+<!-- c-7 Login User And Toggle Registration And Login Route -->
+481. to check the checkbox is already checked or not [e.target.checkboxName.checked]
+482. create a from where sign in with email and password using [signInWithEmailAndPassword]
+
+<!-- c-8 Handle Email Verification And Forget Or Reset Password -->
+483. email verification using [sendEmailVerification(user)]
+484. for login if email is not verified then show an alert . to check verified [result.user.emailVerified]
+485. forget password using [sendPasswordResetEmail(auth,email)] , here to get the email i have to use Ref 
+
+<!-- c-9 Update User Name To Firebase -->
+486. to update user profile use [updateProfile(auth.currentUser,{displayName:username,photoURL:userPhotoUrl})] then show alert if successful or show error if failed
