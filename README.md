@@ -1418,3 +1418,103 @@ console.log(location)
 
 <!-- c-9 Update User Name To Firebase -->
 486. to update user profile use [updateProfile(auth.currentUser,{displayName:username,photoURL:userPhotoUrl})] then show alert if successful or show error if failed
+
+<!-- Module 49: React Auth Integration and Private Route -->
+<!-- c-1 Module Introduction And Basic Project Setup -->
+487. Basic Project Setup
+      1. create project done 
+      2. install router done
+      3. install tailwind and setup done
+      4. install daisyui done
+      5. create component folder and home.jsx, nav.jsx done
+      6. copy navbar from daisy ui and paste it in nav.jsx and customize link  done
+      7. create a links variable to reduce duplicate link element done
+      8. create a router and set a path for child done
+      9. set outlet in root.jsx  done
+      10. use NavLink to navigate another pages done
+      11. create 3 button home , login and register  done
+      12. install firebase done 
+      13. create a firebase project and register app then setup configuration done
+
+488. fire base authentication setup
+      1. go to the build done 
+      2. get started done 
+      3. enable sign in method [email/password] done 
+      4. create a register form and a button if already have an account and click to go login page done  
+      5. create a navbar css file and show the active link different color done 
+      6. declare a handler to get the value from input field and prevent default behavior done 
+      7. call createUserWithEmailAndPassword from firebase/auth done 
+      8. 
+
+
+<!-- c-3 Create User Context For Shared Authentication -->
+489. 
+      1. create a context to share data from parent to child without props drilling done
+      2. to share the date i will create a auth provider and a auth context done 
+      3. then i will call the auth context from provider and children props will pass in context as child and set any value in auth context done 
+      4. then the router i created will wrap with auth provider in main.jsx done 
+      5. then can access the value from another component done 
+      [note: here i will create a authProvider and pass the router provider inside the auth provider and receive as children and then create a auth context then wrap the children by auth context pass some value as params in auth context then call useContext from any component and pass the auth context in useContext to get the data ]
+
+<!-- c-4 Use Context To Create A User On The Register Page -->
+490. 
+      1. create a context and export done 
+      2. create a provider , so the i can reuse the context in different places done 
+      3. ensure use the auth provider in the router done 
+      4. make sure use the auth provider in the router done 
+      5. make the create user with email and password shared via provider done 
+      6. declare a function with 2 parameter email and password done 
+      7. call and return createUserWithEmailAndPassword(pass auth , email , password) done 
+      8. then call the function to create user from register form and pass the value of email and password then .then and .catch
+      9. create a handler and to click the form and pass the email and password via function and create user done 
+
+<!-- c-5 Add Sign In User Using Context API -->
+491. 
+      1. declare a function  with email and password parameter done 
+      2. return signInWithEmailAndPassword(auth,email,password) done 
+      3. set the function as auth info object done 
+      4. then get the function from login page done 
+      5. create a button to click the login from and a handler  done 
+      6. pass email and password value in function done 
+      7. to get current user set observer [to observe which user is logged in]
+      8. to set observer call onAuthStateChanged with 2 parameter [auth and a callback function] done
+      9. observer used for hold the user info and can share multiple state for this observer can hold the user after loading done 
+
+<!-- c-6 (Advanced) Use OnAuthStateChanged With UseEffect To Manage User Auth State -->
+492. memory leak 
+      1.  use useEffect to connect with firebase to set observer [this is use to reduce oserver memory space otherwise every time observer with take space and memory will be loaded]
+      2. set observer in useEffect
+      3. store in a variable 
+      4. return the variable and call the variable so that i can clear the ref
+      5. declare a state to store user and set in authInfo to get the user info from another component 
+      6. get the user in nav and set a button if user available then show sign out or if not login
+
+<!-- c-7 Introduction To Private Route And Handle Sign Out -->
+493. implement sign out 
+    1. to sign out call signOut from firebase auth 
+    2. pass auth as a parameter 
+    3. then set in the context and call the function from another where user log out button available 
+    4. to reset login form [e.target.reset()]
+    5. make 2 component like orders and profile that will show if user logged in , then create router and can route one component to another
+    6. use private route to protect the things which is user private things like profile , orders list , dashboard etc . for private route without login cannot access all of these things 
+
+<!-- c-8 Loading State Navigate After Login -->
+494. private route 
+      1. declare a private route component 
+      2. import user by context 
+      3. conditional rendering if user is available then return children 
+      4. if user not available then navigate login page 
+      5. then declare a router path and in element  wrap the component which will be available if user exist [no 3 children is wrapped component]
+      6. use loader when page will be reload and show the loader until get the user and login and signin also will show loading
+      7. declare a component name dashboard and when i click the dashboard then if not user then show login form 
+      8. and show dashboard after login 
+      9. use useLocation to get the router location
+
+<!-- c-9 Auth Redirect And Social Sign In -->
+495. 
+      1. useLocation to get current state location
+      2. then use useNavigate to navigate the location state 
+      3. if location state is not available then default location is '/' 
+      4. now use google login use googleAuthProvider(auth,provider)
+      5. call if from a function and the function call from login component in a login handler 
+      6. and redirect navigate form the handler function 
