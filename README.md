@@ -1553,8 +1553,57 @@ console.log(location)
 503. folder name will be dist and existing dist no replace 
 504. then npm run dev and firebase deploy command
 
-<!-- module - 52 assignment  -->
-  plan for the assignment 
+<!-- module - 52.5 bonus class  -->
+ <!-- Install Node-Express And Run Your First Node Server -->
 
-    1. plan the assignment design (theme forest , dribble , )
-    2.   
+505. go to the express js website
+      1. click get started > installing
+      2. make folder [mkdir folderName] then change folder [cd folder name]
+      3. npm initialize [npm init]
+      4. entry point (index.js/app.js)
+      5. then install express js [npm i express]
+      6. declare a file name same like entry point [index.js / app.js]
+      7. import express [const express = require('express')] require is like import [previous version of es6]
+      8. create a app using express [const app = express()]
+      9. declare a port like a server entry point number [const port = 3000/5000/6000]
+      10. declare app request and response method  app.get('/',(req,res)=>{
+        res.send('welcome to my first ever server');
+      })
+      11. declare port listen [app.listen(port number,()=>{
+        console.log("running port 5000 right now")
+      })]
+      12. running locally [node js file name ]
+      13. problem is every time if i change any thing have to give node index.js command 
+      14. solution :  install nodemon and after change nodemon index.js 
+
+506. Create Get All Data Api And Single Phone Api
+      1. from local json to api data 
+      2. using require declare a phones data variable and import phone data from json
+      3. declare a api [app.get('path'.()=>{})]
+      4. then send the json data to api res.send(data variable)
+      5. here if i want can declare the path like dynamic way 
+      6. declare a dynamic api [app.get('/path/:id,(req,res)=>{const id = req.params.id})]
+      7. first i have to get the id [const id = req.params.id] id must have to convert integer [const id = parseInt(req.params.id)]
+      8. find the user form users[json data] using id 
+      9. then send the user to server [res.send(found user)]
+
+507.  Load Single Data Using Get API (connect the server to the react)
+      1. create a react project [npm create vite@latest]
+      2. set up project using 
+      [ mkdir my-react-router-app
+        cd my-react-router-app
+        npm init -y
+
+        # install runtime dependencies
+        npm i react-router @react-router/node @react-router/serve isbot react react-dom
+
+        # install dev dependencies
+        npm i -D @react-router/dev vite
+      ]
+      3. set router and use loader to fetch data [it will show error because of CROS policy]
+      4. to fix it install [npm i cors]
+      5. import it using require and call it 
+      [const cors = require('cors')
+      app.use(cors())
+      ]
+      6. now the data is available to fetch 
