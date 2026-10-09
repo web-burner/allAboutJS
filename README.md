@@ -1578,7 +1578,7 @@ console.log(location)
 
 506. Create Get All Data Api And Single Phone Api
       1. from local json to api data 
-      2. using require declare a phones data variable and import phone data from json
+      2. using require declare a users data variable and import phone data from json
       3. declare a api [app.get('path'.()=>{})]
       4. then send the json data to api res.send(data variable)
       5. here if i want can declare the path like dynamic way 
@@ -1607,3 +1607,4 @@ console.log(location)
       app.use(cors())
       ]
       6. now the data is available to fetch 
+      7. then can fetch dynamically 
