@@ -1608,3 +1608,114 @@ console.log(location)
       ]
       6. now the data is available to fetch 
       7. then can fetch dynamically 
+
+
+<!-- Milestone-10 [Backend and database integration] -->
+<!-- module-53 [Getting Started with Node, Express and Api] -->
+<!-- 53.1 module introduction and what is server  -->
+507. what is server ? 
+    => who provide the things.
+508. different server different purpose 
+      1. web server 
+      2. file server 
+      3. application server
+      4. database server [data store related]
+509. server manage the request and response between client and database [
+  if client request somethings server go to the database . if request fulfill then response to the client 
+]
+
+<!-- 53.2 Client And Server Connection With Request And Response -->
+510. what is CRUD ? 
+    => create , read , update , delete
+511. get > get data from database
+512. post > store data in database
+513. put > update data in database
+514. delete > delete data from database
+515. to send data have to use a middleware express.json()
+516. to get any specific data from server object [req.params.name/id/address]
+
+<!-- 53.3/4 Node Vs Other Languages. How Does Node Js Work -->
+
+517. what is node js?
+    => server side javascript runtime , javascript library , not a programming language . it is an asynchronous event driven javascript runtime.
+518. node js has own library for manage node js
+519. javascript has non-blocking event loop 
+520. server with threads and blocking behavior 
+521. when to use node js 
+522. what is the benefit of node js 
+      1. fast data streaming 
+      2. no buffering 
+      3. asynchronous 
+      4. event driven 
+      5. single threaded 
+      6. highly scalable 
+      7. cross platform compatibility
+      8. javascript
+523. what is express js ? 
+  => a framework of node js
+524. what is middleware in express js?
+
+
+<!-- 53-5 What Is Database, DBMS, MongoDB, NoSQL Vs SQL -->
+
+525. what is data ?
+    => digital info about somethings 
+526. what is database ?
+    => a container that store data structured way
+527. what is database management system?
+    => database is just a container which stores data where as database management system or DBMS is a software which is used to manage your data base . 
+528. what is 3 tier architecture ? 
+529. what is SQL? 
+    => structured query language 
+530.  what is NoSQL? 
+531. types of nosql database 
+  1. document database (recommended)
+  2. key-value database 
+  3. wide-column database 
+  4. graph database
+532. when should use NoSQL ? 
+    => to build somethings fast
+533. what is mongoDB ? 
+    => NoSQL distributed document database.
+534. what is the difference between SQL and NoSQL?
+
+
+<!-- 53-6/7 (Recap) Install Node-Express -->
+
+535. install node-express 
+    1. create a folder 
+    2. select the folder 
+    3. npm init -y [shortcut no need to ans too many question]
+    4. create a property inside package.json > script > start : "node index.js"
+    5. create a file index.js
+    6. install express and cors
+    7. create a file .gitignore
+    8. git init 
+    9. import express 
+    10. create a app
+    11. create a prot [process.env.PORT || 3000/5000/4000 etc]
+    12. create a server app.get('path',(req,res)=>{})
+    13. res.send('user server is loading)
+    14. listen to the port [app.lister(port)]
+    15. create a react project 
+    16. fetch data from server [use cors to ignore cross error]
+    17. declare a form and form handler to handle form 
+
+<!-- 53-8 Explore Fetch For Post Method And Send Client Data To The Server -->
+
+536. send data to server 
+    1. create a server app.post('path',(req,res)=>{ const newUser = req.body;
+    newUser.id = users.length+1;
+    users.push(newUser);
+    res.send(newUser)})
+    2. to get the data from client [req.body]
+    3. use a middleware [app.use(express.json())]
+    4. crate a data object  by clicking onSubmit 
+    5. fetch data [fetch('path-location',{request object})]
+    6. request object {
+      method:"POST",
+      headers: {'content-type':'application/json'},
+      body: JSON.stringify(dataObject)
+    }
+    7. fetch('address',{request object}).then(res=> res.json()).then(data => console.log(data))
+    8. to ui update every time add user declare a state , then every time after fetch the i will get it will have to set in state 
