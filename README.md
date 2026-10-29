@@ -1594,10 +1594,10 @@ console.log(location)
         cd my-react-router-app
         npm init -y
 
-        # install runtime dependencies
+        <!-- # install runtime dependencies -->
         npm i react-router @react-router/node @react-router/serve isbot react react-dom
 
-        # install dev dependencies
+        <!-- # install dev dependencies -->
         npm i -D @react-router/dev vite
       ]
       3. set router and use loader to fetch data [it will show error because of CROS policy]
@@ -1613,109 +1613,285 @@ console.log(location)
 <!-- Milestone-10 [Backend and database integration] -->
 <!-- module-53 [Getting Started with Node, Express and Api] -->
 <!-- 53.1 module introduction and what is server  -->
+<!-- this module i will learn how to connect client side to server and how to get and set data to server -->
 507. what is server ? 
-    => who provide the things.
-508. different server different purpose 
-      1. web server 
-      2. file server 
-      3. application server
-      4. database server [data store related]
-509. server manage the request and response between client and database [
-  if client request somethings server go to the database . if request fulfill then response to the client 
-]
+508. who run server ? 
+509. what is computer server?
+510. server request and response
+511. does every server works same?
+512. types of server 
+513. what is database?
+514. what is 3 tire architecture ?
 
-<!-- 53.2 Client And Server Connection With Request And Response -->
-510. what is CRUD ? 
-    => create , read , update , delete
-511. get > get data from database
-512. post > store data in database
-513. put > update data in database
-514. delete > delete data from database
-515. to send data have to use a middleware express.json()
-516. to get any specific data from server object [req.params.name/id/address]
+<!-- 53-2 Client And Server Connection With Request And Response -->
+515. rest request [get,post,put,delete] method
+516. rest response [xml,json format]
+517. get - to get the data from database 
+518. post - store data in database 
+519. put - updata existing data 
+520. delete - to delete data in database
+521. how post method works ?
+      const name = 'shaon'
+      fetch('serverUrl',request object
+      {
+      method:"POST",
+      header:{'content-type':'application/json'}
+      body: JSON.stringify(data)
+      })
+      .then(res => res.json())
+      .then(data => console.log(data))
 
-<!-- 53.3/4 Node Vs Other Languages. How Does Node Js Work -->
+522. what is request object ?
+      1. req.body
+      2. req.params
 
-517. what is node js?
-    => server side javascript runtime , javascript library , not a programming language . it is an asynchronous event driven javascript runtime.
-518. node js has own library for manage node js
-519. javascript has non-blocking event loop 
-520. server with threads and blocking behavior 
-521. when to use node js 
-522. what is the benefit of node js 
-      1. fast data streaming 
-      2. no buffering 
-      3. asynchronous 
-      4. event driven 
-      5. single threaded 
-      6. highly scalable 
-      7. cross platform compatibility
-      8. javascript
-523. what is express js ? 
-  => a framework of node js
-524. what is middleware in express js?
+523. what is response object ?
+      1. res.send()
+      2. res.json()
+      3. res.status()
+      4. res.sendStatus()
+      5. res.set()
 
+<!-- 53-3 Node Vs Other Languages. How Does Node Js Work -->
+524. what is node js?
+525. node js is a server side javascript run time 
+530. what is run time ?
+531. what is run time environment ?
+532. what is threaded?
+533. non-blocking i/o event loop
+534. asynchronous node js
+535. event driven in node js
+536. when node js use ?
+
+<!-- 53-4 What Are Node Js And Express Js And Why Use Them -->
+537. why node js recommended ?
+538. features of node js?
+539. what is express ?
+540. what is middleware ?
 
 <!-- 53-5 What Is Database, DBMS, MongoDB, NoSQL Vs SQL -->
+541. what is data ?
+542. what is database ?
+543. what is database management system (DBMS)
+544. what is SQL vs noSQL?
+545. type of noSQL database?
+546. what is mongoDB ?
+547. advantages of mongodb?
 
-525. what is data ?
-    => digital info about somethings 
-526. what is database ?
-    => a container that store data structured way
-527. what is database management system?
-    => database is just a container which stores data where as database management system or DBMS is a software which is used to manage your data base . 
-528. what is 3 tier architecture ? 
-529. what is SQL? 
-    => structured query language 
-530.  what is NoSQL? 
-531. types of nosql database 
-  1. document database (recommended)
-  2. key-value database 
-  3. wide-column database 
-  4. graph database
-532. when should use NoSQL ? 
-    => to build somethings fast
-533. what is mongoDB ? 
-    => NoSQL distributed document database.
-534. what is the difference between SQL and NoSQL?
+<!-- 53-6 (Recap) Install Node-Express -->
+548. cmd > 
+      cd project folder > 
+      mkdir folder name > 
+      user management server > 
+      npm init -y > 
+      go to package.json > 
+      scripts >"start" : "node index.js" > 
+      install express and cors [npm i express cors] > 
+      go to dependence[package.json] and check installed or not > 
+      create a file name index.js > 
+      require express [const express = require('express')]
+      create a app [const app = express()]
+      create a port = process.env.PORT || 3500;
+      create a api ('/url',(req,res)=>{
+        res.send('my user server is running')
+      })
 
+      listen the port [app.listen(port,()={console.log('server running on port',port)})]
 
-<!-- 53-6/7 (Recap) Install Node-Express -->
+<!-- 53-7 Use Fetch To Load Data, Create React Form -->
+549. create some users > 
+    create a api using api location '/users' > 
+    send these users to the server> 
+    create a vite project > 
+    fetch the data from client app > 
+    declare a component name users > 
+    send the usersFetchPromise to users component , here have to use cors method to fetch users api otherwise it will show an error for cross platform 
+    [const cors = require('cors')
+    app.use(cors())]
 
-535. install node-express 
-    1. create a folder 
-    2. select the folder 
-    3. npm init -y [shortcut no need to ans too many question]
-    4. create a property inside package.json > script > start : "node index.js"
-    5. create a file index.js
-    6. install express and cors
-    7. create a file .gitignore
-    8. git init 
-    9. import express 
-    10. create a app
-    11. create a prot [process.env.PORT || 3000/5000/4000 etc]
-    12. create a server app.get('path',(req,res)=>{})
-    13. res.send('user server is loading)
-    14. listen to the port [app.lister(port)]
-    15. create a react project 
-    16. fetch data from server [use cors to ignore cross error]
-    17. declare a form and form handler to handle form 
+    then map the users variable and show users > 
+    then create a user form to take user info
+    name , email 
 
 <!-- 53-8 Explore Fetch For Post Method And Send Client Data To The Server -->
+550. declare a handler to submit the form info > 
+    e.preventDefault() > 
+    collect user info clicking handler > declare a fetch method inside handler 
+    fetch('api',request object {
+      method:'POST',
+      header: {
+      'content-type':'application/json'
+      }
+      body: JSON.stringify(collected data)
+    })
 
-536. send data to server 
-    1. create a server app.post('path',(req,res)=>{ const newUser = req.body;
-    newUser.id = users.length+1;
-    users.push(newUser);
-    res.send(newUser)})
-    2. to get the data from client [req.body]
-    3. use a middleware [app.use(express.json())]
-    4. crate a data object  by clicking onSubmit 
-    5. fetch data [fetch('path-location',{request object})]
-    6. request object {
-      method:"POST",
-      headers: {'content-type':'application/json'},
-      body: JSON.stringify(dataObject)
+    to receive in server declare a post api
+
+    app.post('api address',(req,res)=>{
+      const newUser = req.body;
+      <!-- send to ui  -->
+      res.send(newUser)
+    })
+
+here have to use [app.use(express.json())] to receive json data from client side , use this like middleware 
+
+
+<!-- Module 54: Node Express With MongoDB And Basic CRUD -->
+<!-- 54-1 Create Mongodb Atlas Account For Simple Crud Server -->
+551. first of all create a server for mongodb
+552. what is mongodb ? 
+553. go to mongodb atlas website > 
+      sign with google > 
+      accept all privacy policy > 
+      choose free version for cluster > 
+      choose a cluster name> 
+      available regional server > 
+      create deployment
+554. go to the network and database access > 
+      then add new database user 
+
+<!-- Async Await, Try Catch And Connect To Database simple-crud-database  18hE1GwSILfh4v9k-->
+555. now i have to connect database to server 
+    1. add a new database user
+    2. go to cluster > connect > select driver 
+    3. install mongodb > go to the document > connect,create mongodb client
+    4. copy this line [const {MongoClient , ServerApiVersion} = require('mongodb')]
+    5. copy the uri and declare a variable [replace user and password in the uri]
+    6. create a client pass the uri and serverApiVersion
+    7. declare an async function to connect the database 
+    8. then try/catch/finally
+    9. use the try finally inside function 
+    10. then inside try connect the client.db('admin').command({ping:1}) here i have to ping the client to connect the database
+    11. inside finally [i will not use client.close() because i will close the client after one time run]
+
+    async function run () {
+      try{
+          (await client.connect()).db('admin').command({ping:1});
+          console.log('Database connect to server successfully')
+      }finally{
+          // client.close()
+      }
     }
-    7. fetch('address',{request object}).then(res=> res.json()).then(data => console.log(data))
-    8. to ui update every time add user declare a state , then every time after fetch the i will get it will have to set in state 
+    run().catch(console.dir)
+
+<!-- 54-3 Create Client-Side Post And Send Data To The Server Side -->
+556. in client project install react-router 
+    1. create a component name Users
+    2. to show Users component import in App component 
+    3. create a from in Users component 
+    4. declare a handler to get user info 
+    5. fetch in handler 
+    6. create a post api in server to receive the data inside the async function after client connect 
+    7. create new user from req.body 
+    8. push new user into users 
+    9. send to client side [res.send(newUser)]
+    10. use [app.use(express.json())] to get json data from client 
+
+<!-- 54-4 Save Data, InsertOne User Data In The Database Collection -->
+557. go to mongodb docs > client libraries > node.js driver
+    1. go to crud operation 
+    2. insert document 
+        1. insertOne()
+        2. insertMany()
+        3. bulkWrite()
+    3. create a database inside run function [const usersDb = client.db('users-db')]
+    4. create a collection [const usersCollection = usersDb.collection('collection-name')]
+    5. declare a post api in run function to get user info 
+    6. now insert to database [const result = await usersCollection.insertOne(newUser)] inside post api
+    7. now send to ui [res.send(result)]
+    8. console.log(insertedId) to see data successfully inserted or not
+
+<!-- 54-5 Display Data On UI From Database -->
+558. get data from database 
+    1. declare a get api [app.get('users',(req,res)=>{})]
+    2. go to the cursor in mongodb then read the document 
+    3. declare a variable name cursor 
+    4. in this variable cursor take the collection 
+    [const cursor = usersCollection.find()]
+    5. declare another variable name result
+    [const result = await cursor.toArray()]
+    toArray() its return all data as array
+    then can see the users data from server 
+    6. now can fetch the api from client side 
+    7. then pass the fetch response to users component store as initial users 
+    8. store the initial data in the state 
+    9. now display data from the state 
+    10. change users id to insertedId inside fetch post
+    11. then set users to state 
+
+<!-- 54-6 Delete A User, Handle ObjectId -->
+559. delete a user from ui
+    1. declare a handler in user component [handleDeleteUser]
+    2. call the handler from to button 
+    3. send user id as parameter 
+    4. receive the user id in handler 
+    5. declare a delete api in server [app.delete('/users/:id',(req,res)=>{
+        const id = req.params.id
+    })]
+    6. use fetch inside handler in user component [fetch(`http://localhost:3500/users/${id}`,{
+    method:'DELETE'})]
+
+    7. declare a query in server [const query = {_id : new ObjectId(id)}] 
+
+    8. declare a variable name result [const result = await usersCollection.deleteOne(query)]
+    9. send the result as response
+    10. in users component after fetch will get deletedId if deleted id available then filter the data remove the data from users state and setUsers the filtered data 
+
+<!-- 54-7 Load Single Item By Id -->
+560. find document 
+    1. declare a dynamic get api [app.get('/users/:id,(req,res)=>{})]
+    2. get the id [req.params.id]
+    3. create a query [const query ={_id: new ObjectId(id)}]
+    4. find [const result = await usersCollection.findOne(query)] then res.send(result)
+    5. create a router in client app
+    6. declare path to route 
+    7. declare a dynamic path to fetch user by id
+    8. declare a component to display user detail
+    9. user a button name detail to route one component another 
+    
+
+<!-- 54-8 Explore Put And Patch, Create Update Route And Update Form -->
+561. put and patch 
+    1. create a route {path:'/update/:id}
+    2. fetch user in route by id
+    3. declare a component updateUser 
+    4. declare form with name and email field
+    5. to show the user current value in input field use defaultValue [defaultValue={user.name}] then this one can edit without error
+    6. declare a handler to update 
+    7. then take field value from input field
+    8. fetch inside handler [fetch('',{method:'PATCH',headers:{'content-type':'application/json'},body:JSON.stringify(userData)}).then(res=>res.json()).then(data=>console.log(data))]
+    9. declare a patch api in server 
+        app.patch('/users/:id,(req,res)=>{
+          const id = req.params.id
+          const query = {_id: new ObjectId(id)}
+
+        })
+    10. create a variable name update 
+        app.patch('/users/:id,(req,res)=>{
+          const id = req.params.id
+          const query = {_id: new ObjectId(id)}
+          const update = {
+            $set:{
+              name: user.name,
+              email: user.email
+            }
+          }
+        })
+    11. here use $set:{} to update those properties which one i want to update 
+
+    12. declare upsert variable to [const option = {}] just an empty object
+    13. declare result [const result = await userCollection.updateOne(query,update,option)]
+    14. send to user [res.send(result)]
+
+<!-- 54-10 (Optional) Use Mongodb Locally Without Internet -->
+562. MongoDb compass to use mongodb locally
+    1. go to the mongodb compass 
+    2. click download for free 
+    3. select platform macos then download 
+    4. then install mongoDb compass 
+    5. here i took an uri that was mongodb atlas now i have to take an uri from mongodb compass to use it locally
+    6. click add new connection then copy url 
+    7. save and connect 
+    8. then change the uri to new uri
+    9. then run the server 
+    
