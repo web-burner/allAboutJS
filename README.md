@@ -1894,4 +1894,183 @@ here have to use [app.use(express.json())] to receive json data from client side
     7. save and connect 
     8. then change the uri to new uri
     9. then run the server 
+
+
+<!-- Module 55: CRUD with Smart Deals Using MongoDB -->
+<!-- 55-1 Project Overview, Set Up Server And Install Thunder Client -->
+563. build a project [smart deals]
+    1. create a folder 
+    2. npm initialize [npm init -y]
+    3. go package.json in scripts [start:node index.js]
+    4. create a index.js file 
+    5. install express cors mongodb
+    6. create the server 
+    7. use all of middleware for server 
+    8. download postman to check the server and database already connect or not [postman or thunder]
+
+<!-- 55-2 Recap Connect MongoDB , Recap Post API -->
+564. recap mongodb
+    1. go to the mongodb and sign in 
+    2. create a user 
+    3. then connect to the server 
+    4. create client using uri and serverApiVersion
+    5. declare an async function run the function to connect user using try/catch/finally
+    6. go to the mongodb docs > client libraries > crud operation
+    7. create a db then create a collection 
+    8. post the data using insertOne 
+    9. try thunder client to check server connected to database successfully or not 
+    10. declare a delete api , hit the database by thunder
+
+<!-- 55-3 Recap CRUD API For Delete, Update , Get Products -->
+565. delete products 
+    1. get the id in delete api [const id = req.params.id]
+    2. declare a query and create an object for id use ObjectId for id [const query = {_id : new ObjectId(id)}]
+    3. in result variable deleteOne from collection [const result = await productCollection.deleteOne(query)]
+    4. then send the response to client
+    5. go to the thunder client 
+    6. select delete method and paste the id in url
+
+<!-- 55-4 Intro To Query , Project , Limit , Sort, Skip -->
+566. document sort and skip
+    1. go to the mongodb docs
+    2. specify document to return > sort
+    3. go to the server and sort the data ascending and descending way
+    4. [
+      const query = {};
+      const sortFields = {length:1}
+      const cursor = collection.find().sort(sortFields)
+      const result = await cursor.toArray()
+      res.send(result)
+    ]
+    5. set limit how many data will be displayed 
+    [
+      const cursor = collection.find().sort(sortFields).limit(limit number)
+    ]
+
+    6. to skip means skip 10-15 then show the data 
+    [
+      const cursor = collection.find().sort(sortFields).skip(skip number).limit(limit number)
+    ]
+    7. specify field to return [means sometimes i have need only name or title field so i just return the specific field]
+    [
+      const cursor = collection.find().project(projectField)
+    ]
+
+<!-- 55-5 Use Query To Get Products By Email And Explain Bids Collection -->
+567. get the products by email 
+    1. what is query parameter => Query parameters allow you to pass data through a URL without putting it directly into the URL path.[?afterQuestionMarkSendData]
+    2. it start with ?+name+value&name+value;
+
+     app.get("/products", async (req, res) => {
+      console.log(req.query);
+
+      const email = req.query.email;
+      const query = {};
+      if (email) {
+        query.email = email;
+      }
+      const cursor = productsCollection.find(query);
+      const result = await cursor.toArray();
+
+      res.send(result);
+    });
+
+    here i have to take the email as query parameter in url then if email is available in database then set the email i query and find the document in cursor then send the response to client side
+
+    3. create a separate collection for different type of data 
+
+<!-- 55-6 Setup React, Tailwind, DaisyUI And Theme Customization -->
+568. what is primary key and foreign key?
+    1. primary key => A Primary Key is a column (or combination of columns) that uniquely identifies each row in a table.
+    2. foreign key => A Foreign Key is a column that references a Primary Key in another table. It creates a relationship between tables.
+    3. create some fake bids data and insert into database 
+    4. declare a collection [const bidCollection = clientDb.collection('smart-deals-bids')]
+    5. declare a api for bids and take the query email [req.query.email]
+    6. then declare a query object 
+    7. then if email is available in url then set the email to query object 
+    8. find the data based on query from the collection 
+    
+    9. declare a post api for bids to insert bids
+    10. declare a delete api to delete bids data from database 
+
+    11. create a project [smart-deals-client]
+    12. install react router , tailwind , daisyui and setup
+
+
+<!-- 55-7 Create Routes And Basic Pages -->
+569. 
+    1. folder structure for react application 
+      src/
+        ├── app/
+        │   ├── router/
+        │   ├── providers/
+        │   └── store/
+        │
+        ├── pages/
+        │   ├── HomePage.jsx
+        │   ├── LoginPage.jsx
+        │   ├── ProductsPage.jsx
+        │   └── DashboardPage.jsx
+        │
+        ├── features/
+        │   ├── auth/
+        │   ├── products/
+        │   ├── cart/
+        │   ├── orders/
+        │   └── users/
+        │
+        ├── components/
+        │   ├── ui/          # Button, Input, Modal
+        │   ├── shared/      # Navbar, Footer, Pagination
+        │   └── layouts/      # MainLayout, DashboardLayout
+        │
+        ├── hooks/            # Truly global reusable hooks
+        ├── lib/              # Axios, Firebase, third-party setup
+        ├── utils/            # Helper functions
+        └── assets/
+    2. create a component and create folder name home , header , navbar , all products , 
+    3. set up react router in different pages
+    4. create layouts name root layout 
+    5. setup children and outlet in root layout 
+    6. index true home , all products 
+    7. setup the navbar as figma with links variable 
+    8. customize theme dark and light
+
+<!-- 55-8 Set Up AuthContext , Provider And Auth Functions -->
+570. setup firebase project 
+    1. create a project in firebase 
+    2. add app [web] name it and add 
+    3. install firebase 
+    4. create a folder name firebase and create a file [firebase.init.js]
+    5. paste the configuration in this file 
+    6. import the auth in this file 
+    7. set the authenticator provider google and email
+    8. create a folder authContext for authentication and a file and create context 
+    9. create a folder name authProvider and create a file authProvider 
+    10. take children and paste the children insider authContext
+    11. declare a function for authenticate and return the auth method and send as value in authContext
+    12. declare 2 state [user and loading ], user state default null and loading default true
+    13. set a observer using useEffect and every time unmount it after user load 
+
+<!-- 55-9 Implement Register & Social Login Feature -->
+571. implement register and social login 
+    1. create a component for register 
+    2. declare a router for register 
+    3. declare a form for register user
+    4. take a button for google sign in
+    5. for google sign in declare a google sign in provider 
+    6. take a signInWithPopUp from firebase/auth then return from function 
+    7. take it on register component then call the function form handler by clicking button
+    8. then [.then().catch()]
+    9. declare a button for sign in and sign out in navbar 
+    10. declare a private route to protect my products and my bids
+
+<!-- 55-10 Module Summary & Save User Data On Database -->
+572. save data on database
+    1. make a user collection in database
+    2. declare a post api for users
+    3. declare a handler in client side function to sign in and database post method fetch
+    4. take email , name , image, etc data
+    5. have to protect duplicate when insert in database 
+    6. find user in users collection using findOne then if / else condition 
     
