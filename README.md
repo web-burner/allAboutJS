@@ -1937,7 +1937,7 @@ here have to use [app.use(express.json())] to receive json data from client side
     3. go to the server and sort the data ascending and descending way
     4. [
       const query = {};
-      const sortFields = {length:1}
+      const sortFields = {length:1} [1 ascending and -1 descending]
       const cursor = collection.find().sort(sortFields)
       const result = await cursor.toArray()
       res.send(result)
@@ -2074,3 +2074,75 @@ here have to use [app.use(express.json())] to receive json data from client side
     5. have to protect duplicate when insert in database 
     6. find user in users collection using findOne then if / else condition 
     
+<!-- Module 56: CRUD Using Authentication and Data Relation -->
+<!-- 56-1 Project Setup, Load Data From API -->
+573. run the client side and server side 
+574. make the banner field as figma
+575. set daisyui custom ui theme , color and font
+576. in product section show recent  6 products 
+    1. declare a api for recent products
+    2. get all the products using cursor
+    3. sort the array of products using sort method descending way
+    4. then can use limit method to limit 6 products
+    5. declare a component for latest products 
+    6. then fetch the api and display to ui
+
+
+<!-- 56-2 Design Card And Show Latest Products -->
+577. take all latest products and map method to display
+578. for a single product declare a component and pass the data after map to the product component 
+579. then show the data as product card 
+580. declare a products details component to show products in ui
+581. by click go to the products detail page and show the detail
+582. declare a api to load specific data using fetch 
+583. after go to detail then i will have a button to bid
+
+<!-- 56-3 Show Bid Dialogue And Get Bidding Amount In Product Details Page -->
+
+584. if click the bid button then it will show modal in there products details will shows
+585. to show modal i have to use ref cause react doesn't recognize direct dom on the code . then set the modal ref in the dialog [ref={modalRef}]
+
+declare a modalRef [const modalRef = useRef(null)]
+set the modalRef in dialog [ref={modalRef}]
+declare a handler that will take the modal as ref 
+const handleModal = ()=>{
+  modalRef.current.showModal()
+}
+then declare a from in modal that will take bid info, price etc
+then declare a handler to submit form data 
+get the user to use default value in modal form 
+then take data from form like name,email,amount etc by clicking handler
+
+<!-- 56-4 Submit A Bid And Get Bids For A Product Sorted By Price -->
+
+586. create a object for bid in the handler then set properties
+587. declare an api to send the bid data to server 
+588. declare an api to get bids by product and find the products by productId 
+
+<!-- 56-5 Display Sweet Alert After Bid And Load Bids For This Product -->
+589. set alert if bid is successful and close the modal after bid then use useEffect to get bids data by product id. after fetch store the data on state 
+
+
+<!-- 56-6 Display Bids In A Table And Insert New Bid In State In Sorted -->
+590. import table from daisy ui to show those users bids on this product then show the bids array my mapping then after add new bid again have to add in state [...bid,newBid] then sort the bids data and sort by ascending or descending
+
+
+<!-- 56-7 Display My Bids In A Table Format -->
+591. fetch the bids api and get app bids data from database then i have to find data form database by buyer id . fetch the api by useEffect in the component , declare a bids state then store bids after get the data , then show the data by mapping 
+
+
+<!-- 56-8 Delete Bids With A Delete Confirmation -->
+592. declare a status and button for remove bids by id then declare a handler to get the id and filter for ui update and fetch delete api then declare a alert to make sure user want to delete this one . the alert declare inside handler
+
+<!-- 56-9 Use Environment Variable And Module Summary -->
+
+593. environment variable to protect api key and sensitive data from 
+    1. declare a .env file 
+    2. DB_USER = USERNAME
+    3. DB_PASSWORD = PASSWORD
+    4. require('dotenv').config() [to import]
+    5. process.env [to use]
+    6. declare the env file name in gitignore
+
+    7. declare another env for firebase 
+    8. VITE_api variable name 
