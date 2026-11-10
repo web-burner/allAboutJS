@@ -2068,7 +2068,7 @@ here have to use [app.use(express.json())] to receive json data from client side
 <!-- 55-10 Module Summary & Save User Data On Database -->
 572. save data on database
     1. make a user collection in database
-    2. declare a post api for users
+    2. declare a post api for users 
     3. declare a handler in client side function to sign in and database post method fetch
     4. take email , name , image, etc data
     5. have to protect duplicate when insert in database 
@@ -2124,7 +2124,7 @@ then take data from form like name,email,amount etc by clicking handler
 
 
 <!-- 56-6 Display Bids In A Table And Insert New Bid In State In Sorted -->
-590. import table from daisy ui to show those users bids on this product then show the bids array my mapping then after add new bid again have to add in state [...bid,newBid] then sort the bids data and sort by ascending or descending
+590. import table from daisy ui to show those users bids on this product then show the bids array by mapping then after add new bid again have to add in state [...bid,newBid] then sort the bids data and sort by ascending or descending
 
 
 <!-- 56-7 Display My Bids In A Table Format -->
@@ -2140,7 +2140,7 @@ then take data from form like name,email,amount etc by clicking handler
     1. declare a .env file 
     2. DB_USER = USERNAME
     3. DB_PASSWORD = PASSWORD
-    4. require('dotenv').config() [to import]
+    4. install dotenv then require('dotenv').config() [to import]
     5. process.env [to use]
     6. declare the env file name in gitignore
 
