@@ -1905,8 +1905,26 @@ here have to use [app.use(express.json())] to receive json data from client side
     4. create a index.js file 
     5. install express cors mongodb
     6. create the server 
+        const express = require('express')
+        const cors = require('cors')
+        const app = express()
+        const port = process.env.PORT || 3000;
+
+        middleware
+        app.use(cors())
+        app.use(express.json())
+
+        app.get('/',(req,res)=>{
+          res.send('smart deals server is running)
+        })
+
+        app.listen(port,()=>{
+          console.log(smart deals server is running)
+        })
     7. use all of middleware for server 
     8. download postman to check the server and database already connect or not [postman or thunder]
+
+    to test the server is running or not
 
 <!-- 55-2 Recap Connect MongoDB , Recap Post API -->
 564. recap mongodb
@@ -1957,7 +1975,7 @@ here have to use [app.use(express.json())] to receive json data from client side
     ]
 
 <!-- 55-5 Use Query To Get Products By Email And Explain Bids Collection -->
-567. get the products by email 
+567. get the products by email [apiUrl?email=emailAddress]
     1. what is query parameter => Query parameters allow you to pass data through a URL without putting it directly into the URL path.[?afterQuestionMarkSendData]
     2. it start with ?+name+value&name+value;
 
@@ -2028,7 +2046,7 @@ here have to use [app.use(express.json())] to receive json data from client side
         ├── lib/              # Axios, Firebase, third-party setup
         ├── utils/            # Helper functions
         └── assets/
-    2. create a component and create folder name home , header , navbar , all products , 
+    2. create a component folder and create folder name home , header , navbar , all products , 
     3. set up react router in different pages
     4. create layouts name root layout 
     5. setup children and outlet in root layout 
@@ -2058,7 +2076,7 @@ here have to use [app.use(express.json())] to receive json data from client side
     2. declare a router for register 
     3. declare a form for register user
     4. take a button for google sign in
-    5. for google sign in declare a google sign in provider 
+    5. for google sign in declare a google sign-in provider 
     6. take a signInWithPopUp from firebase/auth then return from function 
     7. take it on register component then call the function form handler by clicking button
     8. then [.then().catch()]
@@ -2146,3 +2164,204 @@ then take data from form like name,email,amount etc by clicking handler
 
     7. declare another env for firebase 
     8. VITE_api variable name 
+
+
+<!-- Module 57: JWT & Firebase Admin SDK, Verification, Save User Data -->
+<!-- 57-1 Clone And Setup Team Project And Set Private Route -->
+594. to clone and setup a team project 
+    1. clone the project from github 
+    2. if i run on my terminal then it will show some error like which tools are not install yet in this project 
+    3. i have to install those tools are already used in this project [npm i]
+    4. then if i run the project again then it will show error cause env file 
+    5.  then make an env file to connect the database to server with sensitive data like username and password of database 
+    
+    6. then clone the client side 
+    7. then install all tools like before [npm i]
+    8. same like env file to connect firebase 
+    9. setup a private router 
+    10. by private router i can secure client side but server side is not secure
+    11.  i have to use middleware to secure user info to hit api server
+
+
+<!-- 57-2 Explore JWT Concepts And Send Jwt Token To The Server Using Header -->
+
+595. what is JWT?
+      1. json web token 
+      2. without jwt i can access the protected route but with jwt i can no access the protected route
+      3. it's make sure 2 things 
+        1. authentication [ verify who are you with login password ]
+        2. authorization [verify what you able to do]
+      4. how does work , when i logged in then it will gives a token 
+      5. then it comes to client side [httpOnly is best][]
+      6. then in authorization i have to set the token that i have got then check the token 
+      7. how is looks like ? header.payload.signature
+
+      8. after login server will create a jwt token 
+      9. store it in the client side like[localStorage] for long term otherwise in memory or httponly
+      10. for asking for sensitive data send a request with jwt token in the header
+      11. server will verify the jwt 
+      12. access token vs refresh token [access token valid for short term but refresh token valid for long term and it can take a new token server and verify like renew]
+      13. after logged in firebase provide a access token that can use to verify 
+      14. now have to send in server fetch the api and send a request object 
+      {
+      headers : {
+        authorization: `bearer ${user.accessToken}`
+      }
+      }
+
+      15. in server side [req.headers.authorization]
+  [note: the main purpose of jwt is to secure server side api]
+
+
+<!-- 57-3 Explore Middleware And Create Simple Middleware With Firebase Verify Middleware -->
+
+596. create a middleware 
+    1. declare a function 
+    2. take 3 parameters (req,res,next)  
+      const verifyFirebaseAdmin = (req,res,next)=>{
+
+      }
+    3. then call next named parameter inside its own function 
+    4. then pass the function name into api like a parameter
+    5. then take the token from [req.headers.authorization]
+    6. then check the token is available or not if not available then send an unauthorize message with status code or if available then split the token and take the real token 
+
+
+<!-- 57-4 Firebase Admin SDK Integration And Verify Firebase Admin  -->
+597. verify firebase id token that is not expire or fake token 
+    1. go to firebase 
+    2. go to the project > service account 
+    3. install firebase admin 
+    4. copy the code form firebase service account 
+    
+        const { cert, initializeApp } = require("firebase-admin/app");
+        const { getAuth } = require("firebase-admin/auth");
+        const serviceAccount = require("./smart-deals-private-key.json");
+        const firebaseApp = initializeApp({
+          credential: cert(serviceAccount),
+        });
+
+        then paste this code 
+
+    5. then generate new private key then downloaded file paste to project folder 
+    6. then in serviceAccount variable import the json file path
+      var serviceAccount = require("downloaded private key path")
+    7. click there in firebase learn more > then click id token verification 
+    8. use try/catch to verify admin in middleware 
+
+        try{
+         const userInfo = await getAuth(firebaseApp).verifyIdToken(token);
+         console.log('after token validation,userInfo)
+          next()
+        }catch{
+          return res.status(401).send({message:'unauthorized access'})
+        }
+        use try to verify the admin pass the token in verifyIdToken(token)
+[note this will stop free url search and get data ]
+
+demo copy 
+      const { initializeApp, cert } = require("firebase-admin/app");
+      const { getAuth } = require("firebase-admin/auth");
+      const serviceAccount = require("./smart-deals-practice-3f9bd-firebase-adminsdk-fbsvc-0aff1011ab.json");
+      const firebaseApp = initializeApp({ credential: cert(serviceAccount) });
+      const verifyUser = async (req, res, next) => {
+        if (!req.headers.authorization) {
+          return res.status(401).send({ message: "Unauthorized Access" });
+        }
+        const token = req.headers.authorization.split(" ")[1];
+        if (!token) {
+          return res.status(401).send({ message: "Unauthorized Access" });
+        }
+        try {
+          const userInfo = await getAuth(firebaseApp).verifyIdToken(token);
+          console.log("after verified", userInfo);
+          next();
+        } catch {
+          console.log("access denied");
+        }
+      };
+
+
+
+
+      200 OK — request succeeded
+      201 Created — resource created
+      204 No Content — succeeded with no response body
+      400 Bad Request — invalid request
+      401 Unauthorized — authentication required or invalid
+      403 Forbidden — access denied
+      404 Not Found — resource doesn’t exist
+      409 Conflict — request conflicts with current state
+      422 Unprocessable Content — validation failed
+      429 Too Many Requests — rate limit reached
+      500 Internal Server Error — unexpected server error
+      503 Service Unavailable — service temporarily unavailable
+
+<!-- 57-5 Do Not Allow Stealing Other User Data -->
+598. protect another users data 
+    1. here i have to validate email to protect the data if you have a valid token 
+    2. here i can simply get data in api endpoint 
+    3. req.token_email = userInfo.email [here i have the valid user email i set it like request then get it in next step]
+    4. then i can check the email to get the data from api
+    5. then check the token email in the api endPoint query email and token is same or not [email !== req.token_email] if its not same then send a forbidden message and return 
+
+
+<!-- 57-6 (Optional) Create Custom JWT Token -->
+599. to verify user recommended access token / refresh token 
+
+    here i will create a custom token 
+    1. go to jwt website [jwt.io]
+    2. go to library > node.js > click json web token [$ npm install jsonwebtoken]
+    3. then install jsonwebtoken in server 
+    4. import [const jwt = require('jsonwebtoken');];
+    5. here i have to use data to generate token and a secrete to pass data 
+    6. declare an api endpoint like this 
+           app.post('/getToken',(req,res)=>{
+              const token = jwt.sign({email:'abc'},'secret',{expiresIn:'4h'})
+              res.send({token:token})
+            })
+    7. go to the terminal type node [require('crypto').randomBytes(64bytes).toString('hex')] to get a token like string
+    8. then copy the jwt token and paste in env file name jwt_secret_token  and import it in api [process.env.JWT_SECRET_TOKEN] 
+    9. then go to the authProvider and go to the onAuthStateChanged then fetch and get the data 
+    10. take the url where i have to protect the data and paste in fetch and get the path is api [getToken] then request object 
+    method : 'POST', 
+    headers: {
+      'content-type' : 'application/json'
+    } ,
+    body: JSON.stringify(loggedUserInfo)
+
+    here loggedUserInfo is user email send like an object and in api change email to loggedUser email 
+                  const loggedUser = req.body
+                  const token = jwt.sign(loggedUser,process.env.JWT_SECRET_TOKEN,{expiresIn:'4h'})
+
+    11. if current user is available then take then email and then hit the api endpoint and get the token in client side
+
+
+<!-- 57-7 (Optional) Send Token To The Server And Verify Token -->
+600. now i will set the data in local storage and send to server 
+
+    1. to set locale storage [localStorage.setItem('token',data.token)]
+    2. then the same way to get data from api with verified user just change bearer will be localStorage.getItem('token')
+    3. then declare a new middleware to verify user by jwt token
+    4. then the other way is same as before 
+    5. now i have to verify the token , to verify i have to call 
+    jwt.verify(token,secret,(err,decoded)=>{
+      if(err){
+        return status code
+      }
+      if(decoded){
+        req.token_email = decoded.email
+        next()
+      }
+    })
+    6. then set the decoded email to request parameter [req.token_email = decoded.email]
+    7. then go to that api where using this middleware to verify token and i have to verify the email from query and email from token both are same or not if not then i will not allow to get data 
+    8. then after user get the data when he logged in then clear data token from localStorage [localStorage.removeItem('token')]
+
+<!-- 57-9 (Recap) Use Verify Firebase Token And Secure API -->
+601. 4 things i need to verify real user
+    1. generate token 
+    2. store token 
+    3. send to backend 
+    4. verify token and user
+    
